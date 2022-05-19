@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/profile/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+
+    <title>social media app - profile</title>
+  </head>
+
+
+
+  <body>
+<!-- INDEX CONTAINER -->
+    <div id="app" class="main">
+
+  <!-- HEADER -->
+      <header>
+        <div class="header">
+            <div class="header-left">
+              <span class="material-icons md-36">pets</span>
+              <div class="header-name">aurora </div>
+            </div>
+            <div class="header-right">
+              <button class="material-icons">more_horiz</button>
+            </div>
+          </div>
+      </header>
+  <!-- HEADER -->
+
+
+
+
+
+  <!-- profile header (circle) -->
+  <div class="profile-header"> 
+      <img class="profile-header-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+      <div class="profile-header-tag">corgi_username </div>
+      <div>
+        <p class="profile-header-bio">
+          corkies are cute af 
+        </p>
+      </div>
+  </div>
+  <!-- profile header -->
+
+  
+
+
+
+<div class="gallery-header"></div>
+
+
+
+
+
+  <!-- FOOTER -->
+      <footer>
+        <!-- <img class="footer-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi"> -->
+        <div class="footer-home"> 
+          <span class="footer-home"></span>
+        </div>
+
+
+        <div class="footer-icons">
+          <span class="material-icons footer-icon">search</span>
+          <span class="material-icons footer-icon">home</span>
+          <span class="material-icons footer-icon">message</span>
+        </div>
+
+
+      </footer>
+  <!-- FOOTER -->
+
+
+    </div>
+<!-- INDEX CONTAINER -->
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src={% static 'js/app.js' %}></script>
+  </body>
+
+
+
+
+</html>

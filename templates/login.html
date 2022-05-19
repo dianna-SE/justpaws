@@ -1,0 +1,243 @@
+{% load static %}
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+
+    <title>social media app</title>
+  </head>
+
+
+
+  <body>
+<!-- INDEX CONTAINER -->
+    <div id="app" class="main">
+
+  <!-- HEADER -->
+      <header>
+        <div class="header">
+            <div class="header-left">
+              <span class="material-icons md-36">pets</span>
+              <div class="header-name">aurora </div>
+            </div>
+            <div class="header-right">
+              <button class="material-icons">more_horiz</button>
+            </div>
+          </div>
+      </header>
+  <!-- HEADER -->
+
+
+
+
+
+  <!-- profile header (circle) -->
+  <div class="profile-header"> 
+      <img class="profile-header-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+      <div class="profile-header-tag"> @corgi_username </div>
+      <div>
+        <p class="profile-header-bio">
+          corkies are cute af 
+        </p>
+      </div>
+  </div>
+  <!-- profile header -->
+
+
+
+
+
+
+  <!-- SUGGESTED PROFILE FEED -->
+      <!--
+        <div class="suggested-profile"> 
+
+          <div class="suggested-p">
+            <img class="suggested-p-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+          </div>
+
+          <div class="suggested">
+            <div class="suggested-1">
+              <img class="suggested-img-1" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-1" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-1" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            </div>
+
+            <div class="suggested-2">
+              <img class="suggested-img-2" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-2" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-2" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-2" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            </div>
+
+            <div class="suggested-3">
+              <img class="suggested-img-3" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-3" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <img class="suggested-img-3" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            </div>
+          </div>
+        </div>
+      -->
+  <!-- SUGGESTED PROFILE FEED -->
+
+
+
+
+  
+  <!-- POST FEED -->
+  <div>
+    <!-- FIRST POST -->
+        <div class="post">
+
+          <img class="post-img" src="https://i.imgur.com/epgJp6n.jpeg" alt="corgi">
+          
+          <div class="post-header">
+            <div class="post-left">
+              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <div class="post-username"><b>corgi_username</b></div>
+            </div>
+            <div class="post-right">
+              <span class="material-icons">favorite</span>
+              <span class="material-icons">ios_share</span>
+            </div>
+          </div>
+
+          <!-- NEED TO FIX CSS FOR THIS WHEN LIKES INCREASE -->
+          <div class="post-like post-right">
+            <span class="material-icons post-like-icon">favorite</span>
+            <strong class="post-like-count"><b> liked by 98 people</b></strong> 
+          </div>
+
+          <div class="post-caption">
+            <strong><b>corgi_username</b></strong> 
+              what has many keys but cannot open a single lock? MAX 100 characters.
+          </div>
+
+        </div>
+    <!-- FIRST POST -->
+
+
+    <!-- SECOND POST -->
+        <div class="post">
+
+          <img class="post-img" src="https://preview.redd.it/br7s381idze21.jpg?auto=webp&s=282ebbb7eebbce839415d5a9cff80956fdfc2ac1" alt="corgi">
+          
+          <div class="post-header">
+            <div class="post-left">
+              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <div class="post-username"><b>corgi_username</b></div>
+            </div>
+            <div class="post-right">
+              <span class="material-icons">favorite</span>
+              <span class="material-icons">ios_share</span>
+            </div>
+          </div>
+
+          <div class="post-like post-right">
+            <span class="material-icons post-like-icon">favorite</span>
+            <strong class="post-like-count"><b> liked by 1 person</b></strong> 
+          </div>
+
+          <div class="post-caption">
+            <strong><b>corgi_username</b></strong> 
+            what has many keys but cannot open a single lock? MAX 100 characters.
+          </div>
+
+        </div>
+
+    <!-- SECOND POST -->
+
+    <!-- THIRD POST -->
+        <div class="post">
+
+          <img class="post-img" src="https://mustsharenews.com/wp-content/uploads/2020/07/This-Corgi-Is-A-Meme-King-Whose-Many-Faces-Express-How-2020-Has-Gone-So-Far.jpg" alt="corgi">
+          
+          <div class="post-header">
+            <div class="post-left">
+              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+              <div class="post-username"><b>corgi_username</b></div>
+            </div>
+            <div class="post-right">
+              <span class="material-icons">favorite</span>
+              <span class="material-icons">ios_share</span>
+            </div>
+          </div>
+
+          <div class="post-like post-right">
+            <span class="material-icons post-like-icon">favorite</span>
+            <strong class="post-like-count"><b> liked by others</b></strong> 
+          </div>
+
+          <div class="post-caption">
+            <strong><b>corgi_username</b></strong> 
+            what has many keys but cannot open a single lock? MAX 100 characters.
+          </div>
+
+        </div>
+
+    <!-- THIRD POST -->
+
+  </div>
+
+  <!-- POST FEED -->
+
+
+  <!-- FOOTER -->
+      <footer>
+        <!-- <img class="footer-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi"> -->
+        <div class="footer-home"> 
+          <span class="footer-home"></span>
+        </div>
+
+
+        <div class="footer-icons">
+          <span class="material-icons footer-icon">search</span>
+          <span class="material-icons footer-icon">home</span>
+          <span class="material-icons footer-icon">message</span>
+        </div>
+
+
+      </footer>
+  <!-- FOOTER -->
+
+
+    </div>
+<!-- INDEX CONTAINER -->
+
+
+
+
+
+
+
+
+<!-- FONT STYLING -->
+    <!--
+      font-family: 'Quicksand', sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-family: 'Lora', serif;
+    -->
+<!-- FONT STYLING -->
+
+
+
+
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src={% static 'js/app.js' %}></script>
+  </body>
+
+
+
+
+</html>
