@@ -12,8 +12,7 @@ to refresh: "shift" + refresh button
 html, body {
     margin: 0;
     padding: 0;
-    height: 173vh;
-
+    height: 150vh;
 }
 
 
@@ -112,7 +111,10 @@ header {
     margin-top: -2rem;
 }
 
-
+.profile-welcome {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
 
 /* profile header */
 

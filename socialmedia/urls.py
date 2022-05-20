@@ -9,6 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', vue_views.index, name='index'),
     path('profile', vue_views.profile, name="profile"),
-    path('login', vue_views.login, name='login')
+    path('login', vue_views.login, name='login'),
+    path('register', vue_views.register, name='register')
+
 ]
 

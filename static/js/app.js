@@ -3,7 +3,8 @@ const app = Vue.createApp({
     data() {
         return {
             isVisible: false,
-            greeting: 'you clicked enter!'
+            greeting: 'you clicked enter!',
+            anyText: '',
         };
     },
     methods: {

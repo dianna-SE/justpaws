@@ -1,0 +1,52 @@
+
+.register-body {
+    overflow: hidden;
+}
+
+.register-header-name {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-top: 5rem;
+}
+
+
+
+
+input {
+    border: 1px solid #d3d5d8;
+    background-color: rgb(245, 245, 245);
+    border: 1rem;
+    padding: 13px 30px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    outline: none;
+    margin: 0.5rem;
+}
+
+.register-form {
+    margin-top: -1rem;
+}
+
+.register-form > button {
+    margin-top: -1.5rem;
+}
+
+.register-password-format {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;
+}
+
+.register-create {
+    margin-bottom: 0.5rem;
+}
+
+.register-password-format1 {
+    display: flex;
+    padding: 3rem;
+    align-items: center;
+}

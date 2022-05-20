@@ -1,0 +1,99 @@
+{% load static %}
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+    <title>social media app</title>
+  </head>
+
+
+
+  <body class="register-body">
+<!-- INDEX CONTAINER -->
+    <div id="app" class="main" v-cloak>
+
+    <!-- HEADER -->
+      <header>
+      </header>
+    <!-- HEADER -->
+
+
+
+    <div class="register-box">
+      <!-- LOGO HEADER -->
+      <div class="logo-header">
+        <div class="register-header-name">let's get started. </div>
+      </div>
+      <!-- LOGO HEADER -->
+
+
+
+
+      <!-- REGISTER FORM -->
+      <form class="login-form register-form">
+          <div class="register-password-format"> 
+            <div class="register-create"> create an account </div>
+        
+              <div class="register-format-1">
+                <input class="login-username-input" placeholder="username"/>
+              </div>
+
+              <div class="register-format-1">
+                <input placeholder ="email"/>
+                </div>
+
+                <div class="register-format-1">
+                <input type="password" placeholder="password"/>
+                </div>
+
+                <div class="register-format-1">
+                <input type="password" placeholder="confirm password"/>
+                </div>  
+
+            </div>
+
+            <button type="submit">register</button>
+
+        </form>
+      <!-- REGISTER FORM -->
+
+
+
+
+      <!-- LOG INTO ACCOUNT -->
+        <div class="signup">
+          already have an account?
+          <a href="/login">login</a>
+        </div>
+      <!-- LOG INTO ACCOUNT -->
+
+
+
+
+
+
+
+      </div>
+    </div>
+<!-- INDEX CONTAINER -->
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src={% static 'js/app.js' %}></script>
+  </body>
+
+
+
+
+</html>
