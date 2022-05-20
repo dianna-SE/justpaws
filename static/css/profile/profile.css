@@ -1,8 +1,86 @@
 
-.gallery-header {
+/* GALLERY PROFILE */
+.gallery-profile-header {
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(240, 238, 244));
+}
+
+.gallery-header-profile-img {
+    border-radius: 50%;
+    border: 0.6rem solid rgb(240, 238, 244);
+    height: 4rem;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -2rem;
+}
+
+.gallery-header-profile-name {
+    margin-top: 0.3rem;
+    color: rgb(92, 92, 134);
+}
+
+.gallery-header-bio {
+    font-size: small;
+    text-align: center;
+    margin: 0.1 auto;
+    width: 20rem;
+    opacity: 0.8;
+}
+/* GALLERY PROFILE */
+
+
+
+
+
+
+/* GALLERY FEED */
+.gallery-line {
     margin-top: -3rem;
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     color: rgb(114, 114, 163);
     padding: 2.8rem;
 }
+
+.gallery-profile-img {
+    border-radius: 50%;
+    border: 0.6rem solid rgb(240, 238, 244);
+    height: 4rem;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -2rem;
+}
+
+.gallery-followers-list{
+}
+
+.gallery-followers-img {
+    border-radius: 50%;
+    border: 0.15rem solid rgb(142, 142, 189);
+    height: 3.5rem;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: 0.8;
+}
+
+.gallery-library {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 0;
+}
+
+.gallery-feed-img {
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 9%;
+    background-color: #ccc;
+    align-self: center;
+    justify-self: center;
+}
+
+/* GALLERY FEED */

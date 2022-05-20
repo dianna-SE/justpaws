@@ -2,13 +2,13 @@ const app = Vue.createApp({
     delimiters: ["[[", "]]"],
     data() {
         return {
-            firstName: 'why is this not working',
-            email: 'page@gmail.com',
+            isVisible: false,
+            greeting: 'you clicked enter!'
         };
     },
     methods: {
-        getUser() {
-            console.log(this.firstName)
+        togglePanel() {
+            this.isVisible = !this.isVisible
         },
     },
 })

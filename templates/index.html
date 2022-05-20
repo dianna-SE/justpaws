@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
 
-
     <title>social media app</title>
   </head>
 
@@ -21,7 +20,7 @@
 
   <body>
 <!-- INDEX CONTAINER -->
-    <div id="app" class="main">
+    <div id="app" class="main" v-cloak>
 
   <!-- HEADER -->
       <header>
@@ -31,12 +30,15 @@
               <div class="header-name">aurora </div>
             </div>
             <div class="header-right">
-              <button class="material-icons">more_horiz</button>
+              <button @click.left="togglePanel" class="material-icons">more_horiz</button>
             </div>
+            <div v-show="isVisible" class="header-settings-panel"></div>
+            <!-- SEARCH: Add string to methods to make it work
+            <input @keyup.enter="greet" />
+             -->
           </div>
       </header>
   <!-- HEADER -->
-
 
 
 
@@ -118,9 +120,11 @@
             <strong class="post-like-count"><b> liked by 98 people</b></strong> 
           </div>
 
-          <div class="post-caption">
-            <strong><b>corgi_username</b></strong> 
+          <div>
+            <div class="post-caption">
+              <strong><b>corgi_username</b></strong> 
               what has many keys but cannot open a single lock? MAX 100 characters.
+            </div>
           </div>
 
         </div>
@@ -135,7 +139,7 @@
           <div class="post-header">
             <div class="post-left">
               <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-              <div class="post-username"><b>corgi_username</b></div>
+              <div class="post-username"><b>corkie_borky173</b></div>
             </div>
             <div class="post-right">
               <span class="material-icons">favorite</span>
@@ -145,12 +149,14 @@
 
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">favorite</span>
-            <strong class="post-like-count"><b> liked by 1 person</b></strong> 
+            <strong class="post-like-count"><b> liked by ...</b></strong> 
           </div>
 
-          <div class="post-caption">
-            <strong><b>corgi_username</b></strong> 
-            what has many keys but cannot open a single lock? MAX 100 characters.
+          <div>
+            <div class="post-caption">
+              <strong><b>corkie_borky173</b></strong> 
+              what comes once in a minute, twice in a moment, never in a thousand years? MAX 100 characters.
+            </div>
           </div>
 
         </div>
@@ -178,9 +184,12 @@
             <strong class="post-like-count"><b> liked by others</b></strong> 
           </div>
 
-          <div class="post-caption">
-            <strong><b>corgi_username</b></strong> 
-            what has many keys but cannot open a single lock? MAX 100 characters.
+          <div>
+            <div class="post-caption">
+              <strong><b>corgi_username</b></strong> 
+              i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.
+              i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.
+            </div>
           </div>
 
         </div>

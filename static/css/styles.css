@@ -5,11 +5,14 @@ general: vw, vh, rem, em, %, ch
 
 to refresh: "shift" + refresh button
 */
+[v-cloak] {
+    display: none;
+}
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 150vh;
+    height: 173vh;
 
 }
 
@@ -56,7 +59,6 @@ header {
 }
 
 .header-right {
-    float: right;
     position: absolute;
     right: 0;
     margin-right: 3rem;
@@ -67,6 +69,12 @@ header {
     border: none;
     color: rgb(114, 114, 163);
     background-color: white;
+}
+
+.header-settings-panel {
+    background-color: purple;
+    height: 200px;
+    width: 200px;
 }
 /* header */
 
@@ -186,6 +194,9 @@ header {
 /* post feed */
 .post {
     padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -193,17 +204,25 @@ header {
 }
 
 .post-like {
+    position: absolute;
     display: flex;
-    margin-left: -14rem;
-    margin-top: 0.2rem;
+    flex: 1;
+    margin-top: 18.2rem;
     align-items: center;
+    width: 15rem;
+    padding-left: 1rem;
+    padding-right: 6rem;
 }
 
 .post-like-icon {
-    margin-right: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .post-like-count {
+    margin-left: 0.4rem;
+    margin-top: 0.3rem;
     font-size: 0.8rem;
 }
 
@@ -218,12 +237,13 @@ header {
 .post-header {
     display: flex;
     flex: 1;
+    margin-bottom: -0.3rem;
 }
 
 .post-left {
     display: flex;
     flex: 1;
-    margin-right: 11rem;
+    margin-right: 17rem;
 }
 
 .post-right {
@@ -239,15 +259,17 @@ header {
 
 .post-right:hover {
     cursor: pointer;
-    color: rgb(14, 14, 14); 
+    color: rgb(167, 167, 167); 
     transition: 0.4s;
 }
 
 .post-username {
     color: rgb(92, 92, 134);
-    margin-top: 0.1rem;
-    padding-left: 1%;
+    margin-top: 0.2rem;
     font-size: 0.9rem;
+    position: absolute;
+    padding-right: 2rem;
+    margin-left: 2.6rem;
 }
 
 .post-username-icons {
@@ -258,6 +280,8 @@ header {
 
 .post-img {
     margin-top: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     height: 15rem;
     width: 25rem;
     object-fit: cover;
@@ -272,8 +296,9 @@ header {
     font-size: 0.85rem;
     text-align: left;
     margin: 10 auto;
-    padding-left: 3rem;
-    width: 25rem;
+    margin-left: 3.5rem;
+    padding: 1.7rem 3rem 1rem 0rem;
+    width: 23rem;
     opacity: 0.8;
 }
 
