@@ -100,7 +100,7 @@
 
 /* CREATE ACCOUNT */
 .signup {
-    margin-top: 10rem;
+    margin-top: 9rem;
 }
 
 .signup > a {
@@ -117,3 +117,12 @@
     cursor: pointer;
 }
 /* CREATE ACCOUNT */
+
+
+
+.password-error-login {
+    position: relative;
+    top: 30%;
+    color: rgb(244, 80, 80);
+    margin-bottom: -1.5rem;
+}

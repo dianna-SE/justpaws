@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
     <div class="register-box">
       <!-- LOGO HEADER -->
       <div class="logo-header">
-        <div class="register-header-name">let's get started. </div>
+        <div class="register-header-name">welcome {{user.username}}. </div>
       </div>
       <!-- LOGO HEADER -->
 
@@ -42,10 +43,10 @@
 
 
       <!-- REGISTER FORM -->
-      <form class="login-form register-form" action="" method="POST">
+      <form class="settings-form settings-2-form" action="" method="POST">
 
           {% csrf_token %}
-          <div class="register-password-format"> 
+          <div class="settings-password-format"> 
 
             <div class="password-error"> 
               {% for message in messages %}
@@ -56,29 +57,35 @@
 
 
 
-            <div class="register-create"> create an account </div>
+            <div class="register-create"> let's create your personalized settings. </div>
         
             <!-- username -->
-              <div class="register-format-1">
-                <input name="username" type="text" class="login-username-input" placeholder="username"/>
+              <div class="settings-format">
+                <h4 class="settings-name">your name </h4>
+                <input name="username" type="text" class="login-username-input" placeholder="first name"/>
+                <input name="username" type="text" class="login-username-input" placeholder="last name"/>
               </div>
-            
+
             <!-- email -->
-              <div class="register-format-1">
-                <input name="email" type="email" placeholder ="email"/>
-                </div>
+              <div class="settings-format">
+                <h4>email </h4>
+                <input name="email" type="email" placeholder =""/>
+              </div>
 
-            <!-- password -->
-                <div class="register-format-1">
-                <input name="password" type="password" placeholder="password"/>
-                </div>
+              <!-- about me -->
+              <div class="settings-format">
+                  <h4 class="about-me">about me </h4>
+                <input name="username" type="text" class="settings-bio" placeholder=""/>
+              </div>
 
-            <!-- confirm password -->
-                <div class="register-format-1">
-                <input name="confirmpassword" type="password" placeholder="confirm password"/>
-                </div>  
+              <!-- college attended/attending -->
+              <div class="settings-format">
+                <h4>college, program, or institution </h4>
+                <input name="username" type="text" class="login-username-input settings-bio" placeholder=""/>
+              </div>
+ 
 
-            </div>
+          </div>
 
             <button type="submit">register</button>
 

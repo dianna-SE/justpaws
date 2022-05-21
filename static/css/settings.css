@@ -1,0 +1,49 @@
+.settings-name {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-format > h4 {
+   display: flex;
+}
+
+.settings-password-format {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;    
+}
+
+.settings-format {
+
+}
+
+.settings-about-me {
+}
+
+.settings-form {
+    margin: 3rem;
+    margin-top: -1rem;
+}
+
+.settings-2-form > button {
+    margin-top: -1.5rem;
+}
+
+.settings-form > button {
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor:pointer;
+    padding: 10px 24px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    border-radius: 500px;
+    margin-right: -6rem;
+    font-size: medium;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, #a5a5c8 0%, #a29dbb 51%, #adadd0 100%)
+}

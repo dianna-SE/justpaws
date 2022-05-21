@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
 
-    <title>social media app</title>
+    <title>aurie | note library</title>
   </head>
 
 
@@ -26,11 +26,11 @@
       <header>
         <div class="header">
             <div class="header-left">
-              <span class="material-icons md-36">pets</span>
-              <div class="header-name">aurora </div>
+              <span class="material-icons header-icon ">laptop_mac</span>
+              <div class="header-name">aurie</div>
             </div>
             <div class="header-right">
-              <button @click.left="togglePanel" class="material-icons">more_horiz</button>
+              <a href="/logout" class="material-icons">logout</a>
             </div>
             <div v-show="isVisible" class="header-settings-panel"></div>
             <!-- SEARCH: Add string to methods to make it work
@@ -45,12 +45,12 @@
 
   <!-- profile header (circle) -->
   <div class="profile-header"> 
-      <img class="profile-header-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+      <img class="profile-header-img" src="https://www.timeshighereducation.com/sites/default/files/styles/article785xauto/public/pa-consulting-modern-student-istock-1152767923_0.jpg?itok=G6Ny_tin" alt="corgi">
       <!-- <div class="profile-welcome">welcome back</div> -->
-      <div class="profile-header-tag"> @corgi_username </div>
+      <div class="profile-header-tag"> @user</div>
       <div>
         <p class="profile-header-bio">
-          corkies are cute af 
+          studying optometry at MBKU x SCCO 1990
         </p>
       </div>
   </div>
@@ -94,33 +94,33 @@
 
   
   <!-- POST FEED -->
-  <div>
+  <div class="post-feed">
     <!-- FIRST POST -->
         <div class="post">
 
-          <img class="post-img" src="https://i.imgur.com/epgJp6n.jpeg" alt="corgi">
+          <img class="post-img" src="https://www.oxfordlearning.com/wp-content/uploads/2017/05/Note-Taking-Sentence-Method.png" alt="corgi">
           
           <div class="post-header">
             <div class="post-left">
-              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-              <div class="post-username"><b>corgi_username</b></div>
+              <img class="post-profile-img" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg" alt="corgi">
+              <div class="post-username"><b>student_username</b></div>
             </div>
             <div class="post-right">
-              <span class="material-icons">favorite</span>
-              <span class="material-icons">ios_share</span>
+              <!-- <span class="material-icons post-message">message</span> -->
+              <span class="material-icons">download</span>
             </div>
           </div>
 
           <!-- NEED TO FIX CSS FOR THIS WHEN LIKES INCREASE -->
           <div class="post-like post-right">
-            <span class="material-icons post-like-icon">favorite</span>
-            <strong class="post-like-count"><b> liked by 98 people</b></strong> 
+            <span class="material-icons post-like-icon">bookmark</span>
+            <strong class="post-like-count"><b> downloaded by 98 people</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>corgi_username</b></strong> 
-              what has many keys but cannot open a single lock? MAX 100 characters.
+              <strong><b>student_username</b></strong> 
+              here's a studyguide that i wrote in class!
             </div>
           </div>
 
@@ -131,28 +131,28 @@
     <!-- SECOND POST -->
         <div class="post">
 
-          <img class="post-img" src="https://preview.redd.it/br7s381idze21.jpg?auto=webp&s=282ebbb7eebbce839415d5a9cff80956fdfc2ac1" alt="corgi">
-          
+            <img class="post-img" src="https://clickup.com/blog/wp-content/uploads/2020/01/note-taking.png" alt="corgi">
+
           <div class="post-header">
             <div class="post-left">
-              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-              <div class="post-username"><b>corkie_borky173</b></div>
+              <img class="post-profile-img" src="https://media.istockphoto.com/photos/intelligent-matur-female-math-professor-in-classroom-picture-id638917964?k=20&m=638917964&s=612x612&w=0&h=RhILtaD7xwiMtctq1GjMpZz0XXiJpQ_WBTI215DxNFs=" alt="corgi">
+              <div class="post-username"><b>dr.corkie</b></div>
             </div>
             <div class="post-right">
-              <span class="material-icons">favorite</span>
-              <span class="material-icons">ios_share</span>
+              <!-- <span class="material-icons post-message">message</span> -->
+              <span class="material-icons">download</span>
             </div>
           </div>
 
           <div class="post-like post-right">
-            <span class="material-icons post-like-icon">favorite</span>
-            <strong class="post-like-count"><b> liked by ...</b></strong> 
+            <span class="material-icons post-like-icon">bookmark</span>
+            <strong class="post-like-count"><b> downloaded by ...</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>corkie_borky173</b></strong> 
-              what comes once in a minute, twice in a moment, never in a thousand years? MAX 100 characters.
+              <strong><b>drkoala_username</b></strong> 
+              I hope you are doing well. Just a friendly reminder that we will be hosting our review session tonight at 8pm. Attached are practice exams from previous years. Same rules as before! Keep on studying hard, we are proud of you all! One more week and you have earned another break!
             </div>
           </div>
 
@@ -163,29 +163,28 @@
     <!-- THIRD POST -->
         <div class="post">
 
-          <img class="post-img" src="https://mustsharenews.com/wp-content/uploads/2020/07/This-Corgi-Is-A-Meme-King-Whose-Many-Faces-Express-How-2020-Has-Gone-So-Far.jpg" alt="corgi">
+          <img class="post-img" src="https://s18670.pcdn.co/wp-content/uploads/3jvwsm-1.jpg" alt="corgi">
           
           <div class="post-header">
             <div class="post-left">
-              <img class="post-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-              <div class="post-username"><b>corgi_username</b></div>
+              <img class="post-profile-img" src="https://i.pinimg.com/736x/84/29/94/8429942830ee706352fa51d1af23d503.jpg" alt="corgi">
+              <div class="post-username"><b>archie_username</b></div>
             </div>
             <div class="post-right">
-              <span class="material-icons">favorite</span>
-              <span class="material-icons">ios_share</span>
+              <!-- <span class="material-icons post-message">message</span> -->
+              <span class="material-icons">download</span>
             </div>
           </div>
 
           <div class="post-like post-right">
-            <span class="material-icons post-like-icon">favorite</span>
-            <strong class="post-like-count"><b> liked by others</b></strong> 
+            <span class="material-icons post-like-icon">bookmark</span>
+            <strong class="post-like-count"><b> downloaded by others</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>corgi_username</b></strong> 
-              i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.
-              i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.i'm tall when i'm young and short when i'm old. what am i? MAX 100 characters.
+              <strong><b>archie_username</b></strong> 
+              me thinking that class cancelled but it really isn't. here's some studynotes so we can procrastinate. MAX 100 characters.
             </div>
           </div>
 
@@ -196,6 +195,9 @@
   </div>
 
   <!-- POST FEED -->
+
+
+
 
 
   <!-- FOOTER -->
@@ -216,6 +218,8 @@
       </footer>
   <!-- FOOTER -->
 
+
+  
 
     </div>
 <!-- INDEX CONTAINER -->

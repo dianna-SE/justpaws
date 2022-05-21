@@ -11,6 +11,9 @@ const app = Vue.createApp({
         togglePanel() {
             this.isVisible = !this.isVisible
         },
+        directRegister() {
+            router.push({ path: '/register'})
+        }
     },
 })
 
