@@ -1,4 +1,5 @@
 from genericpath import exists
+import imghdr
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -15,7 +16,34 @@ def index(request):
 
 @login_required(login_url='login')
 def settings(request):
-    return render(request, 'settings.html')
+    user_profile = Profile.objects.get(user = request.user)
+
+    #
+    if request.method == 'POST':
+
+        # UPDATE USER BIO AND INFO - IF USER DOESN'T UPLOAD OR UPDATE ANYTHING
+        if request.FILES.get('image') == None:
+            image = user_profile.profileimg
+            bio = request.POST['bio']
+            location = request.POST['location']
+
+            user_profile.profileimg = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+
+        if request.FILES.get('image') != None:
+            image = request.FILES.get('image')
+            bio = request.POST['bio']
+            location = request.POST['location']
+
+            user_profile.profileimg = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+        return redirect('settings')
+
+    return render(request, 'settings.html', {'user_profile': user_profile})
 
 # PROFILE #
 def profile(request):

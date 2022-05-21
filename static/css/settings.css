@@ -1,11 +1,32 @@
-.settings-name {
-    display: flex;
-    flex-direction: row;
+
+/* personalized settings */
+.settings-create {
+    margin-bottom: 0.8rem;
 }
 
-.settings-format > h4 {
-   display: flex;
+
+/* personalized settings */
+
+
+
+
+
+/* settings form */
+input {
+    width: 10rem;
+    height: 2.5rem;
+    font-family: inherit;
+    color: rgb(68, 68, 68);
 }
+.settings-format {
+   display: flex;
+   flex: 0;
+}
+
+.settings-format-1 {
+    display: flex;
+    margin-left: -11rem;
+ }
 
 .settings-password-format {
     display: flex;
@@ -14,12 +35,72 @@
     align-items: center;    
 }
 
-.settings-format {
 
+
+
+
+
+.settings-format-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.4rem;
+ }
+
+ .settings-format-info> input {
+    width: 21rem;
+ }
+
+.profile {
+    display: flex;
+    flex-direction: column;
 }
 
-.settings-about-me {
+.profile > input {
+    background-color: rgb(245, 245, 245);
+    border: 1rem;
+    padding: 10px 20px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    outline: none;
+    height: 5rem;
+    width: 5rem;
 }
+
+.email, .settings-bio, .college {
+    margin-bottom: 0.8rem;
+}
+
+.college {
+    margin-top: 0rem;
+}
+
+
+
+textarea {
+    background-color: rgb(245, 245, 245);
+    color: rgb(68, 68, 68);
+    border: 1rem;
+    padding: 10px 20px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 25px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    outline: none;
+    font-family: inherit;
+    width: 21rem;
+    margin-left: 0.5rem;
+}
+    
+
+
+
+
+
+
 
 .settings-form {
     margin: 3rem;
@@ -42,8 +123,14 @@
     -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
     box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
     border-radius: 500px;
-    margin-right: -6rem;
     font-size: medium;
     font-weight: bolder;
     background-image: linear-gradient(to right, #a5a5c8 0%, #a29dbb 51%, #adadd0 100%)
+}
+
+/* settings form */
+
+.submit-settings {
+    text-align: center;
+    width: 15rem;
 }

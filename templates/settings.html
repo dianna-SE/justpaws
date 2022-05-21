@@ -31,7 +31,6 @@
     <!-- HEADER -->
 
 
-
     <div class="register-box">
       <!-- LOGO HEADER -->
       <div class="logo-header">
@@ -41,53 +40,36 @@
 
 
 
-
       <!-- REGISTER FORM -->
-      <form class="settings-form settings-2-form" action="" method="POST">
+      <form class="settings-form settings-2-form" action="" method="POST" enctype="multipart/form-data">
 
           {% csrf_token %}
           <div class="settings-password-format"> 
-
-            <div class="password-error"> 
-              {% for message in messages %}
-                {{message}}
-              {% endfor %}
-            </div>
+            <div class="settings-create"> let's create your personalized settings. </div>
 
 
-
-
-            <div class="register-create"> let's create your personalized settings. </div>
-        
+          <!-- INPUT ITEMS -->
+              <!-- profile 
+                  <div class="profile">
+              <label for=""></label>
+              <input type="file" name="image" value="{{user_profile.profileimg}}"/>
+                    </div> -->
             <!-- username -->
               <div class="settings-format">
-                <h4 class="settings-name">your name </h4>
-                <input name="username" type="text" class="login-username-input" placeholder="first name"/>
-                <input name="username" type="text" class="login-username-input" placeholder="last name"/>
+                <input name="firstname" type="text" class="login-username-input" placeholder="first name"/>
+                <input name="lastname" type="text" class="login-username-input" placeholder="last name"/>
               </div>
 
-            <!-- email -->
-              <div class="settings-format">
-                <h4>email </h4>
-                <input name="email" type="email" placeholder =""/>
+              <div class="settings-format-info">
+                <textarea id="about" rows="3" name="bio" type="text" class="settings-bio" placeholder="about me">{{user_profile.bio}}</textarea>
+                <input name="location"  type="text" class="college" placeholder="college" value="{{user_profile.location}}"/>
               </div>
+          <!-- INPUT ITEMS -->
 
-              <!-- about me -->
-              <div class="settings-format">
-                  <h4 class="about-me">about me </h4>
-                <input name="username" type="text" class="settings-bio" placeholder=""/>
-              </div>
-
-              <!-- college attended/attending -->
-              <div class="settings-format">
-                <h4>college, program, or institution </h4>
-                <input name="username" type="text" class="login-username-input settings-bio" placeholder=""/>
-              </div>
- 
 
           </div>
 
-            <button type="submit">register</button>
+            <button type="submit" class="submit-settings">register</button>
 
         </form>
       <!-- REGISTER FORM -->
