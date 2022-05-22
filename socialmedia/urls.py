@@ -11,10 +11,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', vue_views.index, name='index'),
     path('settings', vue_views.settings, name='settings'),
+    path('upload', vue_views.upload, name='upload'),
     path('profile', vue_views.profile, name="profile"),
     path('login', vue_views.login, name='login'),
     path('logout', vue_views.logout, name='logout'),
-    path('register', vue_views.register, name='register')
+    path('register', vue_views.register, name='register'),
+    path('messages', vue_views.message, name='messages'),
 ]
 
 urlpatterns = urlpatterns + static(

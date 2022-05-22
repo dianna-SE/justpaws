@@ -1,7 +1,21 @@
 
+/* settings header */
+header {
+    margin-top: -1rem;
+}
+
+.settings-header-name {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-top: 4rem;
+}
+/* settings header */
+
+
 /* personalized settings */
 .settings-create {
-    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 
@@ -18,9 +32,16 @@ input {
     font-family: inherit;
     color: rgb(68, 68, 68);
 }
+
+.settings-line {
+    display: flex;
+    flex-direction: column;
+}
+
 .settings-format {
    display: flex;
    flex: 0;
+   margin-bottom: 0.15rem;
 }
 
 .settings-format-1 {
@@ -33,6 +54,22 @@ input {
     flex-direction: column;
     padding: 3rem;
     align-items: center;    
+}
+
+
+
+
+
+
+
+.settings-profile-img {
+    height: 10rem;
+    width: 10rem;
+    padding: 0.2rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    image-rendering: -webkit-optimize-contrast;
+    object-fit: cover;
 }
 
 
@@ -56,18 +93,19 @@ input {
 }
 
 .profile > input {
-    background-color: rgb(245, 245, 245);
-    border: 1rem;
-    padding: 10px 20px;
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
-    border-radius: 500px;
-    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
-    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
-    outline: none;
-    height: 5rem;
-    width: 5rem;
+    border-radius: 1px;
+    text-decoration: none;
+    color: gray;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    padding-right: 3rem;
 }
+
+/*.profile > input {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1px;
+}*/
 
 .email, .settings-bio, .college {
     margin-bottom: 0.8rem;
@@ -76,6 +114,9 @@ input {
 .college {
     margin-top: 0rem;
 }
+
+
+
 
 
 
@@ -132,5 +173,23 @@ textarea {
 
 .submit-settings {
     text-align: center;
-    width: 15rem;
+    width: 8rem;
+}
+
+.cancel {
+    margin-right: 1rem;
+    font-family: inherit;
+    color: rgb(125, 125, 125);
+    border: none;
+    cursor:pointer;
+    padding: 10px 2.5rem;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    border-radius: 500px;
+    font-size: medium;
+    font-weight: bolder;
+    background-color: rgb(234, 234, 234);
 }

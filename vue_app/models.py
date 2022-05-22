@@ -12,6 +12,8 @@ class Profile(models.Model):
     bio = models.TextField(blank = True)
     profileimg = models.ImageField(upload_to='profile_images', default = 'paw-profile-default.jpg')
     location = models.CharField(max_length = 50, blank = True)
+    firstname = models.CharField(max_length = 20, blank = True)
+    lastname = models.CharField(max_length = 20, blank = True)
 
     # NAMING THE MODEL #
     def __str__(self):
@@ -19,7 +21,7 @@ class Profile(models.Model):
 
 class Post(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4)
-    user = models.CharField(max_length = 100)
+    user = models.CharField(max_length = 50)
     image = models.ImageField(upload_to = 'post_images')
     caption = models.TextField()
     created_at = models.DateTimeField(default = datetime.now)

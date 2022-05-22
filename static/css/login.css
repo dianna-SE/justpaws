@@ -5,6 +5,7 @@
 
 /* LOGO HEADER */
 .logo-header {
+    margin-top: 5rem;
 }
 
 .logo-header-icon {
@@ -100,7 +101,7 @@
 
 /* CREATE ACCOUNT */
 .signup {
-    margin-top: 9rem;
+    margin-top: 7rem;
 }
 
 .signup > a {

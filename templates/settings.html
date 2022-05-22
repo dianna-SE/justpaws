@@ -21,20 +21,14 @@
 
 
 
-  <body class="register-body">
+  <body>
 <!-- INDEX CONTAINER -->
+
     <div id="app" class="main" v-cloak>
-
-    <!-- HEADER -->
-      <header>
-      </header>
-    <!-- HEADER -->
-
-
-    <div class="register-box">
       <!-- LOGO HEADER -->
-      <div class="logo-header">
-        <div class="register-header-name">welcome {{user.username}}. </div>
+      <div class="">
+          <div class="settings-header-name">hello {{user_profile.firstname}}.</div>
+          <div class="settings-create">let's update your settings. </div>
       </div>
       <!-- LOGO HEADER -->
 
@@ -45,52 +39,41 @@
 
           {% csrf_token %}
           <div class="settings-password-format"> 
-            <div class="settings-create"> let's create your personalized settings. </div>
-
-
           <!-- INPUT ITEMS -->
-              <!-- profile 
-                  <div class="profile">
-              <label for=""></label>
-              <input type="file" name="image" value="{{user_profile.profileimg}}"/>
-                    </div> -->
+
+              <!-- profile -->
+              <label class="profile" for="">
+                  <img class="settings-profile-img" src="{{user_profile.profileimg.url}}" />
+                    <input type="file" name="image" value=""/>
+              </label>
+              <!-- profile -->
+
+
+
             <!-- username -->
+            <div class="settings-line">
               <div class="settings-format">
-                <input name="firstname" type="text" class="login-username-input" placeholder="first name"/>
-                <input name="lastname" type="text" class="login-username-input" placeholder="last name"/>
+                <input name="firstname" type="text" class="" placeholder="first name" value="{{user_profile.firstname}}"/>
+                <input name="lastname" type="text" class="" placeholder="last name" value="{{user_profile.lastname}}"/>
               </div>
 
               <div class="settings-format-info">
                 <textarea id="about" rows="3" name="bio" type="text" class="settings-bio" placeholder="about me">{{user_profile.bio}}</textarea>
                 <input name="location"  type="text" class="college" placeholder="college" value="{{user_profile.location}}"/>
               </div>
+            </div>
           <!-- INPUT ITEMS -->
 
 
           </div>
-
-            <button type="submit" class="submit-settings">register</button>
+            <a class="submit-settings cancel" href="/">cancel</a>
+            <button type="submit" class="submit-settings">save</button>
 
         </form>
       <!-- REGISTER FORM -->
 
 
 
-
-      <!-- LOG INTO ACCOUNT -->
-        <div class="register-signup">
-          already have an account?
-          <a href="/login">login</a>
-        </div>
-      <!-- LOG INTO ACCOUNT -->
-
-
-
-
-
-
-
-      </div>
     </div>
 <!-- INDEX CONTAINER -->
 

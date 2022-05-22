@@ -1,0 +1,34 @@
+{% load static %}
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+    <title>aurie</title>
+  </head>
+
+
+
+  <body>
+    <div id="app">
+      <button @click="togglePanel" class="box">Show Box</button>
+
+    </div>
+<!-- INDEX CONTAINER -->
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src={% static 'js/app.js' %}></script>
+  </body>
+
+
+
+
+</html>

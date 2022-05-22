@@ -20,7 +20,6 @@ to refresh: "shift" + refresh button
 html, body {
     margin: 0;
     padding: 0;
-    height: 145vh
 }
 
 a {
@@ -55,8 +54,10 @@ strong {
 /* header */
 header {
     display: flex;
-    height: 5rem;
+    height: 4rem;
     width: 100%;
+    box-shadow: 0 4px 7px -2px rgb(185, 185, 185);
+    background-color: rgb(253, 253, 253);
 }
 
 .header {
@@ -86,12 +87,25 @@ header {
     border: none;
     color: rgb(114, 114, 163);
     background-color: white;
+    transition: 0.3s;
 }
 
-.header-settings-panel {
+.settings-click:hover {
+    cursor: pointer;
+}
+
+.index-settings {
     background-color: purple;
-    height: 200px;
-    width: 200px;
+    position: fixed;
+    margin-top: 5rem;
+    height: 2rem;
+    width: 2rem;
+    transition: 0.4s;
+}
+
+.header-right > button:hover {
+    color: rgb(163, 163, 240);
+    transition: 0.3s;
 }
 /* header */
 
@@ -103,7 +117,7 @@ header {
 /* profile header */
 .profile-header {
     text-align: center;
-    background-image: linear-gradient(to top, rgba(126, 126, 126, 0), rgb(240, 238, 244));
+    /*background-image: linear-gradient(to top, rgba(126, 126, 126, 0), rgb(240, 238, 244));*/
     margin-bottom: 3.5rem;
 }
 
@@ -118,20 +132,22 @@ header {
     font-size: 0.9rem;
     text-align: center;
     margin: 0.1 auto;
-    width: 20rem;
+    width: 17rem;
     opacity: 0.8;
 }
 
 .profile-header-img {
     border-radius: 50%;
-    border: 0.6rem solid rgb(240, 238, 244);
+    border: 0.25rem solid rgb(255, 255, 255);
     height: 4rem;
     width: 4rem;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: -2.8rem;
+    margin-top: -2rem;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
+    /* TOP box-shadow: 0 -5px 10px 0px rgb(184, 184, 184); */
+    box-shadow: 0 -5px 8px 0px rgb(185, 185, 185);
 }
 
 .profile-welcome {
@@ -217,6 +233,7 @@ header {
 
 
 /* post feed */
+
 .post {
     padding: 1rem;
     margin: 1rem;
@@ -347,39 +364,47 @@ header {
 
 /* post feed */
 
+.clear {
+    clear: both;
+    height: 4rem;
+}
 
 /* footer  */
 
 footer {
     position: fixed;
     bottom: 0;
-    height: 2rem;
+    height: 3.5rem;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.95;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0 -4px 30px -2px rgb(216, 216, 216);
 }
 
-.footer-home {
-    margin-top: -3rem;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(114, 114, 163);
-    padding: 2.8rem;
+.footer-home-icon {
+    position: fixed;
+    background-color: rgb(139, 139, 200);
+    color: white;
+    padding: 0.8rem;
+    margin-left: -1.5rem;
+    bottom: 3%;
+    border-radius: 90%;
+    box-shadow: 0 3px 10px -2px rgb(92, 92, 92);
+    transition: 0.3s;
 }
 
-
-.footer-icons {
-    margin-top: -6rem;
-    opacity: 1;
+.footer-home-icon:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(163, 163, 240);
+    transition: 0.3s;
 }
 
 .footer-icon {
-    flex: 1;
-    text-align: center;
     opacity: 1;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    padding-top: 1rem;
+    font-size: smaller;
+    color: rgb(139, 139, 200);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 11rem;
 }
 
 .footer-icon:hover {
@@ -387,9 +412,108 @@ footer {
     opacity: 1;
 }
 
-/* footer  */
+.footer-icons {
+    margin-top: 1rem;
+}
 
-/* INDEX.HTML */
+.footer-1 {
+    margin-right: 3rem;
+    margin-left: 2rem;
+}
+
+.footer-2 {
+    margin-right: 10rem;
+}
+
+.footer-4 {
+    margin-left: 3rem;
+    margin-right: 2rem;
+
+}
+
+.footer-search {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    top: 13;
+    height: 2.5rem;
+    width: 20rem;
+    background-color: rgb(166, 166, 208);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 2px 10px -2px rgb(46, 46, 46);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 1rem;
+}
+
+footer > ::placeholder{
+    color: rgb(255, 255, 255);
+}
+
+a {
+    /* prevents highlighting */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-icons > a:hover {
+    color: rgb(163, 163, 240);
+    transition: 0.3s;
+}
+
+.footer-upload {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 65;
+    right: 80;
+    height: 15rem;
+    width: 25rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(96, 96, 96);
+    box-shadow: 0 2px 30px -2px rgb(96, 96, 96);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 1rem;
+}
+
+/* navbar search */
+.navbar {
+    position: fixed;
+    top: 0;
+    margin-top: 1rem;
+    height: 1rem;
+    width: 20rem;
+    right: 80;
+    background-color: rgb(99, 99, 99);
+    color: rgb(96, 96, 96);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 1rem;
+    box-shadow: 0 2px 30px -2px rgb(216, 216, 216);
+    transform: translate3d(0, 0, 0);
+    transition: 0.1s all ease-out;
+  }
+
+  
+
+.navbar.navbar--hidden {
+    box-shadow: none;
+    transform: translate3d(0, -100%, 0);
+}
 
 
-/* PROFILE.HTML */
+
+
+
