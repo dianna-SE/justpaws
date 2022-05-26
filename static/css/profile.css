@@ -1,86 +1,187 @@
-
-/* GALLERY PROFILE */
-.gallery-profile-header {
-    text-align: center;
-    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(240, 238, 244));
-}
-
-.gallery-header-profile-img {
-    border-radius: 50%;
-    border: 0.6rem solid rgb(240, 238, 244);
-    height: 4rem;
-    width: auto;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: -2rem;
-}
-
-.gallery-header-profile-name {
-    margin-top: 0.3rem;
-    color: rgb(92, 92, 134);
-}
-
-.gallery-header-bio {
-    font-size: small;
-    text-align: center;
-    margin: 0.1 auto;
-    width: 20rem;
-    opacity: 0.8;
-}
-/* GALLERY PROFILE */
-
-
-
-
-
-
-/* GALLERY FEED */
-.gallery-line {
-    margin-top: -3rem;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(114, 114, 163);
-    padding: 2.8rem;
-}
-
-.gallery-profile-img {
-    border-radius: 50%;
-    border: 0.6rem solid rgb(240, 238, 244);
-    height: 4rem;
-    width: auto;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: -2rem;
-}
-
-.gallery-followers-list{
-}
-
-.gallery-followers-img {
-    border-radius: 50%;
-    border: 0.15rem solid rgb(142, 142, 189);
-    height: 3.5rem;
-    width: auto;
-    margin-left: 5%;
-    margin-right: 5%;
-    opacity: 0.8;
-}
-
-.gallery-library {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* PROFILE HEADER */
+header {
+    display: flex;
+    flex: 1;
     align-items: center;
-    gap: 0;
+    height: 13rem;
+    width: 100%;
+    border-radius: 8%;
+    background-color: rgb(185, 185, 226);
+    margin-top: -4.2rem;
 }
 
-.gallery-feed-img {
-    height: 7rem;
-    width: 7rem;
-    object-fit: cover;
-    border-radius: 9%;
-    background-color: #ccc;
-    align-self: center;
-    justify-self: center;
+.profile-header-icon {
+    background-color: rgb(185, 185, 226);
+    color: white;
+    transition: 0.3s;
+    margin-top: 2rem;
 }
+
+.profile-header-icon:hover {
+    transition: 0.3s;
+    color: rgb(104, 104, 152);
+
+}
+
+.profile-header-left {
+    display: flex;
+    margin-left: 3rem;
+    margin-top: 1rem;
+
+}
+
+.profile-header-right {
+    position: absolute;
+    right: 0;
+    margin-right: 2.5rem;
+    margin-top: 1rem;
+}
+
+
+
+
+/* PROFILE BOX */
+.profile-header-box {
+    text-align: center;
+    width: 14rem;
+    padding: 3rem 3rem 1.5rem 3rem;
+    margin: -6rem auto;
+    background-color: rgb(255, 255, 255);
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 25px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-box-img {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -2rem;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    margin-bottom: 0.8rem;
+}
+
+.profile-box-fullname {
+    color: rgb(88, 88, 131);
+    margin-bottom: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.profile-box-button {
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background-color: rgb(88, 88, 131);;
+}
+
+.profile-header-box > button {
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor:pointer;
+    padding: 10px 24px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    border-radius: 500px;
+    font-size: small;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, #b3b3d8 0%, #b2adcc 51%, #bbbbe1 100%)
+}
+
+.profile-header-box > span {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* PROFILE BOX */
+
+
+
+
+
+/* FOLLOWING STATUS */
+.profile-following-list {
+    display: flex;
+    justify-content: center;
+    margin: 7rem auto;
+    margin-bottom: 1rem;
+    background-color: #bbbbe3;
+    color: rgb(83, 83, 83);
+    padding: 0.5rem;
+    width: 13rem;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    border-radius: 500px;
+    font-size: small;
+    font-weight: bolder;
+}
+/* FOLLOWING STATUS */
+
+
+
+
 
 /* GALLERY FEED */
+.profile-gallery {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+
+.profile-gallery > h2 {
+    text-align: center;
+}
+
+.profile-gallery-feed {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.profile-gallery-img-rectangle {
+    height: 10rem;
+    width: 15rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    object-fit: fill;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+}
+
+.profile-gallery-img-square {
+    height: 10rem;
+    width: 10rem;
+    object-fit: fill;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+}
+
+.square-2 {
+    margin-left: 2rem;
+}
+/* GALLERY FEED */
+
+

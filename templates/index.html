@@ -9,11 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
 
-    <title>aurie | note library</title>
+    <title>illume | note library</title>
   </head>
 
 
@@ -27,11 +29,11 @@
         <div class="header">
             <div class="header-left">
               <span class="material-icons header-icon ">pets</span>
-              <div class="header-name">aurie</div>
+              <div class="header-name">illume</div>
             </div>
 
             <div class="header-right">
-              <button @click.left="toggleSettings" class="material-icons settings-click">settings_suggest</button>
+              <a href="logout" class="material-icons settings-click">logout</a>
               <div v-if="isVisible" class="index-settings"></div>
             </div>
 
@@ -43,18 +45,17 @@
 
   <!-- profile header (circle) -->
   <div class="profile-header"> 
-      <a href="/profile">
-        <img class="profile-header-img" src="{{user_profile.profileimg.url}}" alt="corgi">
+      <a href="/profile/username" class="a-invisible">
+        <img class="profile-header-img" src="{{user_profile.profileimg.url}}">
       </a>
       <!-- <div class="profile-welcome">welcome back</div> -->
-      <a href="/profile">
+      <a href="/profile/username">
         <div class="profile-header-tag">{{user_profile.firstname}}</div>
       </a>
       <div>
         <p class="profile-header-bio">
-          out of the mountain of despair, a stone of hope.
+          {{user_profile.bio}}
         </p>
-        <br>
         <!--<a class="material-icons header-icon" href="logout">logout</a>-->
       </div>
   </div>
@@ -67,39 +68,42 @@
   <!-- POST FEED -->
   <div class="post-feed">
     <!-- FIRST POST -->
+
+        {% for post in posts reversed %}
         <div class="post">
 
-          <img class="post-img" src="https://www.oxfordlearning.com/wp-content/uploads/2017/05/Note-Taking-Sentence-Method.png" alt="corgi">
+          <img class="post-img" src="{{post.image.url}}" alt="corgi">
           
           <div class="post-header">
             <div class="post-left">
               <img class="post-profile-img" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg" alt="corgi">
-              <div class="post-username"><b>student_username</b></div>
+              <div class="post-username"><b>@{{post.user}}</b></div>
             </div>
             <div class="post-right">
               <!-- <span class="material-icons post-message">message</span> -->
-              <span class="material-icons">download</span>
+              <span class="material-icons">file_download</span>
             </div>
           </div>
 
           <!-- NEED TO FIX CSS FOR THIS WHEN LIKES INCREASE -->
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b> downloaded by 98 people</b></strong> 
+            <strong class="post-like-count"><b> MATHX11.docx</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>student_username</b></strong> 
-              here's a studyguide that i wrote in class!
+              <a href="#"><strong><b>{{post.user}}</b></strong></a>
+              {{post.caption}}
             </div>
           </div>
 
         </div>
+        {% endfor %}
     <!-- FIRST POST -->
 
 
-    <!-- SECOND POST -->
+  <!-- PROP POST 
         <div class="post">
 
 
@@ -109,31 +113,30 @@
           <div class="post-header">
             <div class="post-left">
               <img class="post-profile-img" src="https://media.istockphoto.com/photos/intelligent-matur-female-math-professor-in-classroom-picture-id638917964?k=20&m=638917964&s=612x612&w=0&h=RhILtaD7xwiMtctq1GjMpZz0XXiJpQ_WBTI215DxNFs=" alt="corgi">
-              <div class="post-username"><b>dr.corkie</b></div>
+              <div class="post-username"><b>Dr.Kerk</b></div>
             </div>
             <div class="post-right">
-              <!-- <span class="material-icons post-message">message</span> -->
               <span class="material-icons">download</span>
             </div>
           </div>
 
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b> downloaded by ...</b></strong> 
+            <strong class="post-like-count"><b> CLS590_MT1.pdf</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>dr.corkie</b></strong> 
+              <strong><b>Dr.Kerk</b></strong> 
               I hope you are doing well. Just a friendly reminder that we will be hosting our review session tonight at 8pm. Attached are practice exams from previous years. Same rules as before! Keep on studying hard, we are proud of you all! One more week and you have earned another break!
             </div>
           </div>
 
         </div>
 
-    <!-- SECOND POST -->
 
-    <!-- THIRD POST -->
+
+
         <div class="post">
 
           <img class="post-img" src="https://s18670.pcdn.co/wp-content/uploads/3jvwsm-1.jpg" alt="corgi">
@@ -141,29 +144,38 @@
           <div class="post-header">
             <div class="post-left">
               <img class="post-profile-img" src="https://i.pinimg.com/736x/84/29/94/8429942830ee706352fa51d1af23d503.jpg" alt="corgi">
-              <div class="post-username"><b>archie_username</b></div>
+              <div class="post-username"><b>archiethebaldie</b></div>
             </div>
             <div class="post-right">
-              <!-- <span class="material-icons post-message">message</span> -->
               <span class="material-icons">download</span>
             </div>
           </div>
 
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b> downloaded by others</b></strong> 
+            <strong class="post-like-count"><b>PLS101.docx</b></strong> 
           </div>
 
           <div>
             <div class="post-caption">
-              <strong><b>archie_username</b></strong> 
-              me thinking that class cancelled but it really isn't. here's some studynotes so we can procrastinate. MAX 100 characters.
+              <strong><b>archiethebaldie</b></strong> 
+              Me thinking that class cancelled but it really isn't. Some studynotes so we can procrastinate.
             </div>
           </div>
 
         </div>
 
-    <!-- THIRD POST -->
+-->
+
+
+<!-- suggested followers -->
+        <!--<div class="gallery-followers-list">
+            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+        </div>
+<!-- suggested followers -->
 
   </div>
 
@@ -180,18 +192,92 @@
 
             <a @click.left="toggleSearch" class="material-icons footer-icon footer-2">search</a>
 
-            <a class="material-icons footer-icon footer-3" href="/settings">manage_accounts</a>
-            <a href="/messages"class="material-icons footer-icon footer-4">send</a>
+            <a class="material-icons footer-icon footer-3">group</a>
+            <a href="/settings"class="material-icons footer-icon footer-4">settings_suggest</a>
           </div>
 
-          <input v-if="showSearch" class="footer-search" placeholder="search"></input>
+
+          <input v-if="showSearch" class="footer-search" placeholder="search">search</input>
+
+
+
+
 
           <div v-if="showUpload" class="footer-upload "> 
-            <input type="file" id="myFile" name="filename">
-            <input type="submit">
-            <a @click.left="toggleUpload" >cancel</a>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UPLOAD CONTAINER -->
+<div class="share-main share-form">
+      <div class="share-header-name">share your notes.</div>
+      <div class="settings-create">only pdf, docx, and pptx files are allowed.</div>
+
+  <!-- UPLOAD FORM -->
+  <form class="settings-form settings-2-form" action="upload" method="POST" enctype="multipart/form-data">
+
+      {% csrf_token %}
+      <div class="settings-password-format"> 
+
+          <label class="profile" for="">
+              <img class="settings-profile-img" src="/static/images/blank-profile-picture.png" />
+                <input type="file" name="image_upload" value="" />
+          </label>
+
+        <div class="settings-line">
+          <div class="settings-format">
+            <input name="filename" type="text" placeholder="file name" />
+            <input name="coursename" type="text" placeholder="course name"/>
           </div>
-          <a class="material-icons footer-home-icon" @click.left="toggleUpload">add</a>
+
+          <div class="settings-format-info">
+            <textarea rows="3" name="caption" type="text" class="settings-bio" placeholder="description"></textarea>
+          </div>
+        </div>
+
+      </div>
+        <a class="submit-settings cancel" @click.left="toggleUpload">cancel</a>
+        <button type="submit" class="submit-settings">share</button>
+
+    </form>
+  <!-- UPLOAD FORM -->
+</div>
+<!-- UPLOAD CONTAINER -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+        <a class="material-icons footer-home-icon" @click.left="toggleUpload">add</a>
 
         <!-- search -->
           <!--

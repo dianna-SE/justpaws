@@ -23,9 +23,16 @@ class Post(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4)
     user = models.CharField(max_length = 50)
     image = models.ImageField(upload_to = 'post_images')
-    caption = models.TextField()
+    caption = models.TextField(max_length = 50)
     created_at = models.DateTimeField(default = datetime.now)
     no_of_downloaded = models.IntegerField(default = 0)
+
+    def __str__(self):
+        return self.user
+
+class FollowersCount(models.Model):
+    follower = models.CharField(max_length = 100)
+    user = models.CharField(max_length = 100)
 
     def __str__(self):
         return self.user

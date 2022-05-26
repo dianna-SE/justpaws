@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
 
-    <title>social media app</title>
+    <title>illume | {{user_profile.user.username}}'s profile</title>
   </head>
 
 
@@ -24,110 +24,191 @@
     <div id="app" class="main">
 
   <!-- HEADER -->
-      <header>
-        <div class="header">
-            <div class="header-left">
-              <span class="material-icons md-36">pets</span>
-              <div class="header-name">aurora </div>
-            </div>
-            <div class="header-right">
-              <button class="material-icons">more_horiz</button>
-            </div>
-          </div>
-      </header>
-  <!-- HEADER -->
+  <header>
+    <div class="header profile-header">
+        <div class="profile-header-left">
+          <a href="/" class="material-icons profile-header-icon ">arrow_back_ios</a>
+        </div>
+
+        <div class="profile-header-right">
+          <a href="/settings" class="material-icons profile-header-icon">manage_accounts</a>
+        </div>
+
+    </div>
+  </header>
+<!-- HEADER -->
 
 
 
 
-  <!-- profile header (circle) -->
-  <div class="gallery-profile-header"> 
-      <img class="gallery-header-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-      <div class="gallery-header-profile-name"> Corkie Mae </div>
-      <div>
-        <p class="gallery-header-bio">
-          Here is an elegant solution to get a 2x2 layout to collapse into a 1x4 layout when the window size gets too small.
-        </p>
+
+<!-- PROFILE BOX -->
+<form action="/follow" method="POST">
+  {% csrf_token %}
+  <div class="profile-header-box">
+      <div class="profile">
+
+        <a href="/profile/username">
+          <img class="profile-box-img" src="{{user_profile.profileimg.url}}">
+        </a>
+
+        <h3 class="profile-box-fullname">{{user_profile.firstname}} {{user_profile.lastname}}</h3>
+        <div class="profile-box-tag">@{{user_profile.user.username}}</div>
+
+        <div class="profile-box-bio">
+          <h4>{{user_profile.bio}}</h4>
+        </div>
       </div>
+
+      <input type="hidden" value="{{user.username}}" name="follower" />
+      <input type="hidden" value="{{user_object.username}}" name="user" />
+
+      {% if user_object.username == user.username %}
+      <button class="profile-box-button">your profile</button>
+      {% else %}
+      <button type="submit" class="profile-box-button">follow</button>
+      {%endif %}
+
   </div>
-  <!-- profile header -->
+</form>
+<!-- PROFILE BOX -->
+
+
+
+
+
+
+
+<!-- FOLLOWING STATUS -->
+  <div class="profile-following-list">
+    {% if user_post_length == 0 %}
+    <div>no posts | followers | 100 following</div>
+    {% elif user_post_length == 1 %}
+    <div>1 post | followers | 100 following</div>
+    {% else %}
+    <div>{{user_post_length}} posts | followers | 100 following</div>
+    {% endif %}
+  </div>
+<!-- FOLLOWING STATUS -->
+
+
+<!-- FOLLOWING STATUS 
+  <div class="profile-following-list">
+
+    {% if user_post_length == 0 %}
+    <div>no posts | followers | 100 following</div>
+    {% elif user_post_length == 1 %}
+    <div>1 post | followers | 100 following</div>
+    {% else %}
+    <div>{{user_post_length}} posts | followers | 100 following</div>
+    {% endif %}
+  </div>
+FOLLOWING STATUS -->
+
+
+
+
+
+
+
+
+<!-- GALLERY FEED -->
+  <div class="profile-gallery">
+    <h2>notes<h2>
+
+      {% for post in user_posts %}
+    <div class="profile-gallery-feed">
+      <a href="{{post.image.url}}">
+        <img class="profile-gallery-img-rectangle" src="{{post.image.url}}">
+      </a>
+      <a href="{{post.image.url}}">
+        <img class="profile-gallery-img-square" src="{{post.image.url}}">
+      </a>
+    </div>
+
+    <div class="profile-gallery-feed">
+      <a href="{{post.image.url}}">
+        <img class="profile-gallery-img-square square-2" src="{{post.image.url}}">
+      </a>
+      <a href="{{post.image.url}}">
+        <img class="profile-gallery-img-rectangle rectangle-2"  src="{{post.image.url}}">
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+<!-- GALLERY FEED -->
+
+
+
+
+
+
+
+
+<!-- GALLERY FEED 
+<div class="profile-gallery">
+  <h2>notes<h2>
+
+    {% for post in user_posts %}
+  <div class="profile-gallery-feed">
+    <div>
+      <img class="profile-gallery-img-rectangle" src="https://www.wikihow.com/images/thumb/1/18/Take-Better-Notes-Step-1-Version-2.jpg/v4-460px-Take-Better-Notes-Step-1-Version-2.jpg.webp">
+    </div>
+    <div>
+      <img class="profile-gallery-img-square" src="https://images.pexels.com/photos/3854816/pexels-photo-3854816.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    </div>
+  </div>
+
+  <div class="profile-gallery-feed">
+    <div>
+      <img class="profile-gallery-img-square square-2" src="https://m.media-amazon.com/images/I/81nia28xsOL._AC_SL1500_.jpg">
+    </div>
+    <div>
+      <img class="profile-gallery-img-rectangle rectangle-2"  src="https://i.ytimg.com/vi/9siqSpnGN6w/maxresdefault.jpg">
+    </div>
+  </div>
+
+  <div class="profile-gallery-feed">
+    <div>
+      <img class="profile-gallery-img-rectangle" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg">
+    </div>
+    <div>
+      <img class="profile-gallery-img-square" src="https://uploads-ssl.webflow.com/5ad143610f7efd77b6f188f3/5e3d6ede4a070144b6b8bfdb_IMG_1227.jpg">
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+ GALLERY FEED -->
+
+
+
+
+
+
+
+
+
+
+<!-- ENLARGE IMAGE USING VUE JS -->
+
+<!-- ENLARGE IMAGE -->
+
 
 
 
 
   
-  <!-- GALLERY FEED -->
-  <div class="gallery-feed">
-        <img class=" gallery-profile-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-        
-        <div class="gallery-line">GALLERY LINE CURVY</div>
-        
-        <div class="gallery-followers-list">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-        </div>
 
-        <div class=" gallery-library">
-          <img class="gallery-feed-img" src="https://i.imgur.com/epgJp6n.jpeg" alt="corgi">
-          <img class="gallery-feed-img" src="https://preview.redd.it/br7s381idze21.jpg?auto=webp&s=282ebbb7eebbce839415d5a9cff80956fdfc2ac1" alt="corgi">
-          <img class="gallery-feed-img" src="https://mustsharenews.com/wp-content/uploads/2020/07/This-Corgi-Is-A-Meme-King-Whose-Many-Faces-Express-How-2020-Has-Gone-So-Far.jpg" alt="corgi">
-          <img class="gallery-feed-img" src="https://i.imgur.com/epgJp6n.jpeg" alt="corgi">
-          <img class="gallery-feed-img" src="https://preview.redd.it/br7s381idze21.jpg?auto=webp&s=282ebbb7eebbce839415d5a9cff80956fdfc2ac1" alt="corgi">
-          <img class="gallery-feed-img" src="https://mustsharenews.com/wp-content/uploads/2020/07/This-Corgi-Is-A-Meme-King-Whose-Many-Faces-Express-How-2020-Has-Gone-So-Far.jpg" alt="corgi">
-          <img class="gallery-feed-img" src="https://i.imgur.com/epgJp6n.jpeg" alt="corgi">
-          <img class="gallery-feed-img" src="https://preview.redd.it/br7s381idze21.jpg?auto=webp&s=282ebbb7eebbce839415d5a9cff80956fdfc2ac1" alt="corgi">
-          <img class="gallery-feed-img" src="https://mustsharenews.com/wp-content/uploads/2020/07/This-Corgi-Is-A-Meme-King-Whose-Many-Faces-Express-How-2020-Has-Gone-So-Far.jpg" alt="corgi">
-        </div>
-
-  </div>
-  <!-- POST FEED -->
-
-
-  <!-- FOOTER -->
-      <footer>
-        <!-- <img class="footer-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi"> -->
-        <div class="footer-home"> 
-          <span class="footer-home"></span>
-        </div>
-
-
-        <div class="footer-icons">
-          <span class="material-icons footer-icon">search</span>
-          <span class="material-icons footer-icon">home</span>
-          <span class="material-icons footer-icon">message</span>
-        </div>
-
-
-      </footer>
-  <!-- FOOTER -->
 
 
     </div>
 <!-- INDEX CONTAINER -->
 
-
-
-
-
-
-
-
-<!-- FONT STYLING -->
-    <!--
-      font-family: 'Quicksand', sans-serif;
-      font-family: 'Hind Siliguri', sans-serif;
-      font-family: 'Lora', serif;
-    -->
-<!-- FONT STYLING -->
-
-
-
-
-
     <script src="https://unpkg.com/vue@3.0.5"></script>
     <script type="module" src={% static 'js/app.js' %}></script>
+
   </body>
 
 
