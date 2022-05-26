@@ -623,5 +623,44 @@ a {
 }
 
 
+/* SUGGESTED */
+.suggested-panel {
+    position: absolute;
+    padding: -10rem;
+    background-color: gray;
+}
+
+.suggested-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggested-img {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.suggested-button {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    cursor:pointer;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 100%;
+    font-weight: bolder;
+    color: rgb(136, 136, 177); 
+    transition: 0.4s;
+}
+
+.material-icons.md-18 {
+    font-size: 1rem;
+}
+/* SUGGESTED
+
+
 
 

@@ -177,20 +177,22 @@
 -->
 
 
-<!-- suggested followers -->
-        <!--<div class="gallery-followers-list">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-            <img class="gallery-followers-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-        </div>
-<!-- suggested followers -->
+
 
   </div>
 
   <!-- POST FEED -->
 
+<!-- SUGGESTED CONTAINER -->
+<div v-if="showSuggested" class="suggested-panel"> 
+  <div> users to follow </div>
 
+    <div>
+        <img class="suggested-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
+        <button class="material-icons md-18 suggested-button">person_add</button>
+    </div>
+</div>
+<!-- SUGGESTED CONTAINER -->
 
   <!-- FOOTER -->
       <footer>
@@ -201,7 +203,7 @@
 
             <a @click.left="toggleSearch" class="material-icons footer-icon footer-2">search</a>
 
-            <a class="material-icons footer-icon footer-3">group</a>
+            <a @click.left="toggleSuggested" class="material-icons footer-icon footer-3">group</a>
             <a href="/settings"class="material-icons footer-icon footer-4">settings_suggest</a>
           </div>
 
@@ -212,15 +214,6 @@
           </form>
 
 
-          <div v-if="showUpload" class="footer-upload "> 
-            
-
-
-
-
-
-
-
 
 
 
@@ -229,12 +222,13 @@
 
 
 <!-- UPLOAD CONTAINER -->
-<div class="share-main share-form">
-      <div class="share-header-name">share your notes.</div>
-      <div class="settings-create">only pdf, docx, and pptx files are allowed.</div>
+  <div v-if="showUpload" class="footer-upload "> 
+    <div class="share-main share-form">
+        <div class="share-header-name">share your notes.</div>
+        <div class="settings-create">only pdf, docx, and pptx files are allowed.</div>
 
-  <!-- UPLOAD FORM -->
-  <form class="settings-form settings-2-form" action="upload" method="POST" enctype="multipart/form-data">
+          <!-- UPLOAD FORM -->
+    <form class="settings-form settings-2-form" action="upload" method="POST" enctype="multipart/form-data">
 
       {% csrf_token %}
       <div class="settings-password-format"> 
@@ -261,7 +255,7 @@
 
     </form>
   <!-- UPLOAD FORM -->
-</div>
+  </div>
 <!-- UPLOAD CONTAINER -->
 
 
