@@ -64,9 +64,9 @@
       <input type="hidden" value="{{user_object.username}}" name="user" />
 
       {% if user_object.username == user.username %}
-      <button class="profile-box-button">your profile</button>
+      <a class="profile-box-button non-button" href="/settings">change profile</a>
       {% else %}
-      <button type="submit" class="profile-box-button">follow</button>
+      <button type="submit" class="profile-box-button">{{button_text}}</button>
       {%endif %}
 
   </div>
@@ -79,7 +79,7 @@
 
 
 
-<!-- FOLLOWING STATUS -->
+<!-- POST STATUS 
   <div class="profile-following-list">
     {% if user_post_length == 0 %}
     <div>no posts | followers | 100 following</div>
@@ -89,6 +89,36 @@
     <div>{{user_post_length}} posts | followers | 100 following</div>
     {% endif %}
   </div>
+ POST STATUS -->
+
+<!-- FOLLOWING STATUS -->
+<div class="profile-following-box">
+
+
+
+  {% if user_post_length == 0 %}
+  <div> no notes</div>
+  {% elif user_post_length == 1 %}
+  <div> 1 note</div>
+  {% else %}
+  <div> {{user_post_length}} notes</div>
+  {% endif %}
+
+
+
+
+  {% if user_followers == 0 %}
+  <div> no followers</div>
+  {% elif user_followers == 1 %}
+  <div> 1 follower</div>
+  {% else %}
+  <div> {{user_followers}} followers</div>
+  {% endif %}
+
+
+
+  <div> {{user_following}} following</div>
+</div>
 <!-- FOLLOWING STATUS -->
 
 

@@ -28,8 +28,8 @@
       <header>
         <div class="header">
             <div class="header-left">
-              <span class="material-icons header-icon ">pets</span>
-              <div class="header-name">illume</div>
+              <a href="/" class="material-icons header-icon ">pets</a>
+              <a href="/" class="header-name">illume</a>
             </div>
 
             <div class="header-right">
@@ -45,11 +45,11 @@
 
   <!-- profile header (circle) -->
   <div class="profile-header"> 
-      <a href="/profile/username" class="a-invisible">
+      <a href="/profile/{{user_profile}}" class="a-invisible">
         <img class="profile-header-img" src="{{user_profile.profileimg.url}}">
       </a>
       <!-- <div class="profile-welcome">welcome back</div> -->
-      <a href="/profile/username">
+      <a href="/profile/{{user_profile}}" >
         <div class="profile-header-tag">{{user_profile.firstname}}</div>
       </a>
       <div>
@@ -72,20 +72,29 @@
         {% for post in posts reversed %}
         <div class="post">
 
-          <img class="post-img" src="{{post.image.url}}" alt="corgi">
+          <img class="post-img" src="{{post.image.url}}">
           
           <div class="post-header">
+
+
             <div class="post-left">
+              <a href="/profile/{{post.user}}">
               <img class="post-profile-img" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg" alt="corgi">
-              <div class="post-username"><b>@{{post.user}}</b></div>
+              </a>
+
+              <a class="post-username" href="/profile/{{post.user}}"><b>@{{post.user}}</b></a>
+
             </div>
+
+
             <div class="post-right">
-              <!-- <span class="material-icons post-message">message</span> -->
-              <span class="material-icons">file_download</span>
+              <!-- ****IMPORTANT***** GET FILE OBJECT AND THEN CHANGE THE POST.IMAGE.URL TO THE POST.FILE!!!! ****-->
+              <a href="{{post.image.url}}"class="material-icons" download>file_download</a>
             </div>
+
+
           </div>
 
-          <!-- NEED TO FIX CSS FOR THIS WHEN LIKES INCREASE -->
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">bookmark</span>
             <strong class="post-like-count"><b> MATHX11.docx</b></strong> 
@@ -93,7 +102,7 @@
 
           <div>
             <div class="post-caption">
-              <a href="#"><strong><b>{{post.user}}</b></strong></a>
+              <a href="/profile/{{post.user}}"><strong><b>{{post.user}}</b></strong></a>
               {{post.caption}}
             </div>
           </div>
@@ -196,11 +205,11 @@
             <a href="/settings"class="material-icons footer-icon footer-4">settings_suggest</a>
           </div>
 
-
-          <input v-if="showSearch" class="footer-search" placeholder="search">search</input>
-
-
-
+          <form action="/search" method="POST">
+            {% csrf_token %}
+            <input v-if="showSearch" type="text" name="username" class="footer-search" placeholder="search">search</input>
+            <button type="submit" class="search-button"></button>
+          </form>
 
 
           <div v-if="showUpload" class="footer-upload "> 
@@ -277,7 +286,7 @@
 
 
 
-        <a class="material-icons footer-home-icon" @click.left="toggleUpload">add</a>
+        <a class="material-icons footer-add-icon" @click.left="toggleUpload">add</a>
 
         <!-- search -->
           <!--

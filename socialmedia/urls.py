@@ -13,6 +13,7 @@ urlpatterns = [
     path('settings', vue_views.settings, name='settings'),
     path('upload', vue_views.upload, name='upload'),
     path('follow', vue_views.follow, name='follow'),
+    path('search', vue_views.search, name='search'),
     path('profile/<str:pk>', vue_views.profile, name="profile"),
     path('login', vue_views.login, name='login'),
     path('logout', vue_views.logout, name='logout'),

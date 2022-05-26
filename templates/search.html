@@ -1,0 +1,110 @@
+{% load static %}
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+    <title>illume | note library</title>
+  </head>
+
+
+
+  <body>
+<!-- INDEX CONTAINER -->
+    <div id="app" class="main" v-cloak>
+
+  <!-- HEADER -->
+      <header>
+        <div class="header">
+            <div class="header-left">
+              <a href="/" class="material-icons header-icon ">pets</a>
+              <a href="/" class="header-name">illume</a>
+            </div>
+
+            <div class="header-right">
+              <a href="logout" class="material-icons settings-click">logout</a>
+              <div v-if="isVisible" class="index-settings"></div>
+            </div>
+
+          </div>
+      </header>
+  <!-- HEADER -->
+
+
+
+
+
+
+  <!-- SEARCH BOX -->
+  <div class="search-box">
+    <br>
+      <form action="/search" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" class="search-input" placeholder="search"></input>
+        <button type="submit" class="search-button"></button>
+      </form>
+
+
+      <div class="search-result"> results for: </div>
+    </br>
+  {% for users in username_profile_list %}
+      <div class="search-results">
+        <div class="search-img-box">
+            <a href="/profile/{{users.user}}">
+                <img class="search-img" src="{{users.profileimg.url}}"></img>
+            </a>
+        </div>
+
+        <div class="search-right">
+            <a href="/profile/{{users.user}}" class="search-user">@{{users.user}}</a><br><br>
+            <div class="search-location">{{users.location}}</div>
+            <div class="search-bio">{{users.bio}}</div>
+        </div>
+      </div>
+
+
+  </div>
+
+  {% endfor %}
+  <!-- SEARCH BOX -->
+  
+
+
+
+  
+
+ 
+
+
+
+
+
+
+    </div>
+<!-- INDEX CONTAINER -->
+
+
+
+
+
+    <div class="clear"></div>
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src={% static 'js/app.js' %}></script>
+  </body>
+
+
+
+
+</html>

@@ -306,7 +306,7 @@ header {
     transition: 0.4s;
 }
 
-.post-right > span {
+.post-right > a {
     margin-top: 0.3rem;
     margin-left: 0.5rem;
     font-size: large;
@@ -382,19 +382,19 @@ footer {
     box-shadow: 0 -4px 30px -2px rgb(216, 216, 216);
 }
 
-.footer-home-icon {
+.footer-add-icon {
     position: fixed;
     background-color: rgb(139, 139, 200);
     color: white;
     padding: 0.8rem;
-    margin-left: -3rem;
+    margin-left: -1.5rem;
     bottom: 3.5%;
     border-radius: 90%;
     box-shadow: 0 3px 10px -2px rgb(92, 92, 92);
     transition: 0.3s;
 }
 
-.footer-home-icon:hover {
+.footer-add-icon:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(163, 163, 240);
     transition: 0.3s;
@@ -451,7 +451,8 @@ footer {
     border-radius: 1rem;
 }
 
-footer > ::placeholder{
+/* CARE if other placeholders have a color of white text */
+form > ::placeholder {
     color: rgb(255, 255, 255);
 }
 
@@ -537,6 +538,89 @@ a {
 }
 
 
+
+
+
+/* search */
+
+.search-result {
+    text-align: left;
+    margin-left: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.search-box {
+    margin-top: 5rem;
+}
+
+.search-results {
+    display: flex;
+    padding: 1rem;
+    margin: 2rem;
+    margin-top: -1rem;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    box-shadow: 0 8px 50px -6px rgb(222, 222, 222);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+
+}
+
+.search-img-box {
+    display: flex;
+    padding-left: 3rem;
+}
+
+.search-right {
+    text-align: left;
+    left: 0;
+    margin: 1rem;
+}
+
+.search-img {
+    text-align: left;
+    height: 10rem;
+    width: 10rem;
+    margin-left: -3rem;
+    object-fit: cover;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+}
+
+.search-button {
+    display: none;
+}
+
+.search-user {
+    font-size: large;
+    color:rgb(110, 110, 159)
+}
+
+.search-location {
+    font-size: smaller;
+    margin-bottom: 0.4rem;
+}
+
+.search-input {
+    display: flex;
+    padding: 1rem;
+    margin: -5rem 1.5rem 1rem 2.5rem;
+    height: 2.5rem;
+    width: 20rem;
+    background-color: rgb(166, 166, 208);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 2px 10px -2px rgb(146, 146, 146);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 1rem;
+}
 
 
 
