@@ -623,11 +623,34 @@ a {
 }
 
 
+
+
+
+
 /* SUGGESTED */
 .suggested-panel {
-    position: absolute;
-    padding: -10rem;
-    background-color: gray;
+    position: fixed;
+    padding: 0.3rem 0.3rem 0.8rem 0.3rem;
+    top: 15%;
+    background-color: rgb(252, 252, 252);
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(200, 200, 200);
+    box-shadow: 0 8px 30px -6px rgb(161, 161, 161);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.suggested-panel > h3 {
+    font-size: medium;
+    margin-bottom: -0.2rem;
+    color:rgb(92, 92, 134);
+    font-weight: bolder;
 }
 
 .suggested-list {
@@ -637,15 +660,15 @@ a {
 
 .suggested-img {
     border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
 }
 
 .suggested-button {
-    width: 2rem;
-    height: 2rem;
+    margin-left: -1.5rem;
+    margin-top: -0.5rem;
     border: none;
     cursor:pointer;
     -webkit-border-radius: 1em;
@@ -654,11 +677,50 @@ a {
     font-weight: bolder;
     color: rgb(136, 136, 177); 
     transition: 0.4s;
+    background-color: white;
 }
 
 .material-icons.md-18 {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    padding: 0.3rem;
 }
+
+.suggested-container {
+    padding: 1rem;
+}
+
+.suggest-button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 4rem;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor:pointer;
+    padding: 5px 15px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 500px;
+    border-radius: 500px;
+    font-size: small;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, #b3b3d8 0%, #b2adcc 51%, #bbbbe1 100%);
+}
+
+.suggest-bio {
+    font-size: small;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    color:rgb(139, 139, 200);
+}
+
+.suggest-user {
+    margin: 0.5rem 0rem;
+    color:rgb(92, 92, 134);
+    font-size: small;
+}
+
 /* SUGGESTED
 
 

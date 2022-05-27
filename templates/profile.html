@@ -97,11 +97,11 @@
 
 
   {% if user_post_length == 0 %}
-  <div> no notes</div>
+  <div> no posts</div>
   {% elif user_post_length == 1 %}
-  <div> 1 note</div>
+  <div> 1 post</div>
   {% else %}
-  <div> {{user_post_length}} notes</div>
+  <div> {{user_post_length}} posts</div>
   {% endif %}
 
 
@@ -141,11 +141,11 @@ FOLLOWING STATUS -->
 
 
 
-<h2 class="gallery-notes">notes<h2>
+<h2 class="gallery-notes">posts<h2>
 <!-- GALLERY FEED -->
 
   <div class="profile-gallery">
-      {% for post in user_posts %}
+      {% for post in user_posts reversed %}
       <a href="{{post.image.url}}">
         <img class="profile-gallery-img-square" src="{{post.image.url}}">
       </a>

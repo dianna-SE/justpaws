@@ -4,9 +4,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import Profile, Post, FollowersCount
+from .models import Profile, Post, FollowersCount, PostUser
 from django.contrib.auth.decorators import login_required
 from itertools import chain
+import random
 
 # Create your views here.
 
@@ -17,6 +18,7 @@ def index(request):
     # adding a username and user profile image to allow dynamic changes to html #
     user_object = User.objects.get(username = request.user.username)
     user_profile = Profile.objects.get(user = user_object)
+
 
     # contains the user's and followers' feeds
     user_following_list = []
@@ -35,24 +37,57 @@ def index(request):
     # import chain to be able to convert feed to a list
     feed_list = list(chain(*feed))
 
-    # adding a post object to allow dynamic changes to html #
-    posts = Post.objects.all()
-    return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed_list})
+    # USER SUGGESTIONS #
+    all_users = User.objects.all()
+    user_following_all = []
+
+    for user in user_following:
+        user_list = User.objects.get(username = user.user)
+        user_following_all.append(user_list)
+    
+    # GRABS ALL THE USERS THAT THE USER IS NOT FOLLOWING INTO A LIST TO SUGGEST
+    new_suggestions_list = [x for x in list(all_users) if (x not in list(user_following_all))]
+    current_user = User.objects.filter(username = request.user.username)
+    final_suggestions_list = [x for x in list(new_suggestions_list) if ( x not in list(current_user))]
+    # RANDOMIZE SUGGESTED AND SHOW ONLY 4 FROM THE LIST #
+    random.shuffle(final_suggestions_list)
+
+    username_profile = []
+    username_profile_list = []
+
+    for users in final_suggestions_list:
+        username_profile.append(users.id)
+    
+    for ids in username_profile:
+        profile_lists = Profile.objects.filter(id_user = ids)
+        username_profile_list.append(profile_lists)
+    
+    suggestions_username_profile_list = list(chain(*username_profile_list))
+
+    return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed_list, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
+
+
+
 
 @login_required(login_url='login')
 def upload(request):
-
-    if request.method == 'POST' :
+    if request.method == 'POST':
         user = request.user.username
         image = request.FILES.get('image_upload')
         caption = request.POST['caption']
+        file_name = request.POST['filename']
+        course_name = request.POST['coursename']
 
-        new_post = Post.objects.create(user = user, image = image, caption = caption)
+        new_post = Post.objects.create(user = user, image = image, caption = caption, file_name = file_name, coursename = course_name)
         new_post.save()
 
         return redirect('/')
     else:
         return redirect('/')
+
+
+
+
 
 @login_required(login_url='login')
 def settings(request):
@@ -93,6 +128,10 @@ def settings(request):
         return redirect('/')
     return render(request, 'settings.html', {'user_profile': user_profile})
 
+
+
+
+
 # PROFILE #
 @login_required(login_url='login')
 def profile(request, pk):
@@ -127,6 +166,12 @@ def profile(request, pk):
 
     return render(request, 'profile.html', context)
 
+
+
+
+
+
+
 # FOLLOWS #
 @login_required(login_url='login')
 def follow(request):
@@ -145,6 +190,12 @@ def follow(request):
             return redirect('/profile/' + user)
     else:
         return redirect('/')
+
+
+
+
+
+
 
 # LOGIN #
 def login(request):
@@ -169,12 +220,23 @@ def login(request):
     else:
         return render(request, 'login.html')
 
+
+
+
+
+
 # LOGOUT #
 @login_required(login_url='login')
 def logout(request):
     auth.logout(request)
     return redirect('login')
 # LOGOUT #
+
+
+
+
+
+
 
 # REGISTER #
 def register(request):
@@ -232,6 +294,12 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+
+
+
+
+
+
 # SEARCH #
 @login_required(login_url='login')
 def search(request):
@@ -256,6 +324,9 @@ def search(request):
 
         username_profile_list = list(chain(*username_profile_list))
     return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
+
+
+
 
 
 

@@ -79,7 +79,7 @@
 
             <div class="post-left">
               <a href="/profile/{{post.user}}">
-              <img class="post-profile-img" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg" alt="corgi">
+              <img class="post-profile-img" src="https://media.istockphoto.com/vectors/dog-paw-print-logo-template-illustration-design-vector-eps-10-vector-id1219513197?k=20&m=1219513197&s=612x612&w=0&h=tk_u4B5pEYTNmSfms30arazeAjFMP92LBg7Nij9sIwY=">
               </a>
 
               <a class="post-username" href="/profile/{{post.user}}"><b>@{{post.user}}</b></a>
@@ -97,7 +97,8 @@
 
           <div class="post-like post-right">
             <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b> MATHX11.docx</b></strong> 
+            <strong class="post-like-count"><b>{{post.course_name}} | </b></strong>
+            <strong class="post-like-count"><b> {{post.file_name}}</b></strong> 
           </div>
 
           <div>
@@ -175,24 +176,35 @@
         </div>
 
 -->
-
-
-
-
   </div>
-
   <!-- POST FEED -->
 
+
+
+
+
+  
 <!-- SUGGESTED CONTAINER -->
 <div v-if="showSuggested" class="suggested-panel"> 
-  <div> users to follow </div>
+  <h3> more friends </h3>
 
-    <div>
-        <img class="suggested-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi">
-        <button class="material-icons md-18 suggested-button">person_add</button>
+    {% for suggestion in suggestions_username_profile_list %}
+    <div class="suggested-container">
+      <a href="/profile/{{suggestion.user}}">
+        <img class="suggested-img" src="{{suggestion.profileimg.url}}">
+      </a>
+        <a href="/profile/{{suggestion.user}}" class="material-icons md-18 suggested-button">person_add</a>
+          <div class="suggest-user">{{suggestion.user}}</div>
+          <!--<div class="suggest-bio">{{suggestion.bio}}</div>-->
+        <a href="/profile/{{suggestion.user}}" class="suggest-button">view user</a>
     </div>
+    {% endfor %}
 </div>
 <!-- SUGGESTED CONTAINER -->
+
+
+
+
 
   <!-- FOOTER -->
       <footer>
