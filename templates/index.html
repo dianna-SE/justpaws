@@ -8,21 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.scss' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/settings.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>illume | note library</title>
+    <title>illume | note library</title>  
   </head>
 
 
 
   <body>
 <!-- INDEX CONTAINER -->
-    <div id="app" class="main" v-cloak>
+    <div id="app" class="main animate__animated animate__fadeIn" v-cloak>
 
   <!-- HEADER -->
       <header>
@@ -56,7 +58,6 @@
         <p class="profile-header-bio">
           {{user_profile.bio}}
         </p>
-        <!--<a class="material-icons header-icon" href="logout">logout</a>-->
       </div>
   </div>
   <!-- profile header -->
@@ -66,7 +67,7 @@
 
   
   <!-- POST FEED -->
-  <div class="post-feed">
+  <div class="post-feed animate__animated animate__fadeInUp">
     <!-- FIRST POST -->
 
         {% for post in posts reversed %}
@@ -79,27 +80,32 @@
 
             <div class="post-left">
               <a href="/profile/{{post.user}}">
-              <img class="post-profile-img" src="https://media.istockphoto.com/vectors/dog-paw-print-logo-template-illustration-design-vector-eps-10-vector-id1219513197?k=20&m=1219513197&s=612x612&w=0&h=tk_u4B5pEYTNmSfms30arazeAjFMP92LBg7Nij9sIwY=">
+              <img class="post-profile-img" src="/static/images/blank-profile-picture.png">
               </a>
-
               <a class="post-username" href="/profile/{{post.user}}"><b>@{{post.user}}</b></a>
-
             </div>
 
 
             <div class="post-right">
-              <!-- ****IMPORTANT***** GET FILE OBJECT AND THEN CHANGE THE POST.IMAGE.URL TO THE POST.FILE!!!! ****-->
-              <a href="{{post.image.url}}"class="material-icons" download>file_download</a>
+              <a class="material-icons">more_horiz</a>
             </div>
-
-
           </div>
 
           <div class="post-like post-right">
-            <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b>{{post.course_name}} | </b></strong>
-            <strong class="post-like-count"><b> {{post.file_name}}</b></strong> 
+            <a href="/like-post?post_id={{post.id}}" class="material-icons post-like-icon md-small">auto_stories</a>
+            {% if post.no_of_downloaded == 0 %}
+            <strong class="post-like-count" ><b>helpful for ...</b></strong>
+            {% elif post.no_of_downloaded == 1 %}
+            <strong class="post-like-count" ><b>helpful for {{post.no_of_downloaded}} person</b></strong>
+            {% else %}
+            <strong class="post-like-count" ><b>helpful for {{post.no_of_downloaded}} people</b></strong>
+            {% endif %}
           </div>
+
+          <!--<div class="post-like post-right">
+            <a href="/like-post?post_id={{post.id}}" class="material-icons post-like-icon md-small">auto_stories</a>
+            <strong class="post-like-count"><b>{{post.course_name}}</b></strong>
+          </div>-->
 
           <div>
             <div class="post-caption">
@@ -111,81 +117,13 @@
         </div>
         {% endfor %}
     <!-- FIRST POST -->
-
-
-  <!-- PROP POST 
-        <div class="post">
-
-
-            <img class="post-img" src="https://clickup.com/blog/wp-content/uploads/2020/01/note-taking.png" alt="corgi">
-
-
-          <div class="post-header">
-            <div class="post-left">
-              <img class="post-profile-img" src="https://media.istockphoto.com/photos/intelligent-matur-female-math-professor-in-classroom-picture-id638917964?k=20&m=638917964&s=612x612&w=0&h=RhILtaD7xwiMtctq1GjMpZz0XXiJpQ_WBTI215DxNFs=" alt="corgi">
-              <div class="post-username"><b>Dr.Kerk</b></div>
-            </div>
-            <div class="post-right">
-              <span class="material-icons">download</span>
-            </div>
-          </div>
-
-          <div class="post-like post-right">
-            <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b> CLS590_MT1.pdf</b></strong> 
-          </div>
-
-          <div>
-            <div class="post-caption">
-              <strong><b>Dr.Kerk</b></strong> 
-              I hope you are doing well. Just a friendly reminder that we will be hosting our review session tonight at 8pm. Attached are practice exams from previous years. Same rules as before! Keep on studying hard, we are proud of you all! One more week and you have earned another break!
-            </div>
-          </div>
-
-        </div>
-
-
-
-
-        <div class="post">
-
-          <img class="post-img" src="https://s18670.pcdn.co/wp-content/uploads/3jvwsm-1.jpg" alt="corgi">
-          
-          <div class="post-header">
-            <div class="post-left">
-              <img class="post-profile-img" src="https://i.pinimg.com/736x/84/29/94/8429942830ee706352fa51d1af23d503.jpg" alt="corgi">
-              <div class="post-username"><b>archiethebaldie</b></div>
-            </div>
-            <div class="post-right">
-              <span class="material-icons">download</span>
-            </div>
-          </div>
-
-          <div class="post-like post-right">
-            <span class="material-icons post-like-icon">bookmark</span>
-            <strong class="post-like-count"><b>PLS101.docx</b></strong> 
-          </div>
-
-          <div>
-            <div class="post-caption">
-              <strong><b>archiethebaldie</b></strong> 
-              Me thinking that class cancelled but it really isn't. Some studynotes so we can procrastinate.
-            </div>
-          </div>
-
-        </div>
-
--->
   </div>
   <!-- POST FEED -->
 
-
-
-
-
   
+
 <!-- SUGGESTED CONTAINER -->
-<div v-if="showSuggested" class="suggested-panel"> 
+<div v-if="showSuggested" class="suggested-panel animate__animated animate__bounceInLeft"> 
   <h3> more friends </h3>
 
     {% for suggestion in suggestions_username_profile_list %}
@@ -200,108 +138,86 @@
     </div>
     {% endfor %}
 </div>
+
+  <!--<div>
+    <button @click.left="toggleSuggested" class="material-icons suggest-bar">group_add</button>
+  </div>-->
 <!-- SUGGESTED CONTAINER -->
 
 
+<!-- FOOTER -->
+<footer class="">
 
+  <div class="footer-icons"> 
+    <a class="material-icons footer-icon footer-1" href="/">home</a>
+    <a @click.left="toggleSearch" class="material-icons footer-icon footer-2">search</a>
+    <a @click.left="toggleSuggested" class="material-icons footer-icon footer-3">group</a>
+    <a href="/settings"class="material-icons footer-icon footer-4">settings_suggest</a>
+  </div>
 
-
-  <!-- FOOTER -->
-      <footer>
-        <!-- <img class="footer-img" src="https://www.boredpanda.com/blog/wp-content/uploads/2020/08/CBr78muJnaq-png__700.jpg" alt="corgi"> -->
-
-          <div class="footer-icons"> 
-            <a class="material-icons footer-icon footer-1" href="/">home</a>
-
-            <a @click.left="toggleSearch" class="material-icons footer-icon footer-2">search</a>
-
-            <a @click.left="toggleSuggested" class="material-icons footer-icon footer-3">group</a>
-            <a href="/settings"class="material-icons footer-icon footer-4">settings_suggest</a>
-          </div>
-
-          <form action="/search" method="POST">
-            {% csrf_token %}
-            <input v-if="showSearch" type="text" name="username" class="footer-search" placeholder="search">search</input>
-            <button type="submit" class="search-button"></button>
-          </form>
-
-
-
-
-
-
-
-
+  <form action="/search" method="POST">
+    {% csrf_token %}
+    <input v-if="showSearch" type="text" name="username" class="footer-search" placeholder="search">search</input>
+    <button type="submit" class="search-button"></button>
+  </form>
 
 <!-- UPLOAD CONTAINER -->
-  <div v-if="showUpload" class="footer-upload "> 
+  <div v-if="showUpload" class="footer-upload"> 
     <div class="share-main share-form">
-        <div class="share-header-name">share your notes.</div>
-        <div class="settings-create">only pdf, docx, and pptx files are allowed.</div>
+        <div class="share-header-name">Share what's new.</div>
+        <div class="settings-create">Click on the box to upload your image. </div>
 
           <!-- UPLOAD FORM -->
-    <form class="settings-form settings-2-form" action="upload" method="POST" enctype="multipart/form-data">
+          <form class="settings-form settings-2-form" action="upload" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="settings-password-format"> 
 
-      {% csrf_token %}
-      <div class="settings-password-format"> 
 
-          <label class="profile" for="">
-              <img class="settings-profile-img" src="/static/images/blank-profile-picture.png" />
-                <input type="file" name="image_upload" value="" />
-          </label>
 
-        <div class="settings-line">
-          <div class="settings-format">
-            <input name="filename" type="text" placeholder="file name" />
-            <input name="coursename" type="text" placeholder="course name"/>
-          </div>
 
-          <div class="settings-format-info">
-            <textarea rows="3" name="caption" type="text" class="settings-bio" placeholder="description"></textarea>
-          </div>
-        </div>
+              <!-- DRAG OR DROP ZONE -->
+              <div class="">
+                <label for="dropzoneFile"></label>
+              </div>
+              <div>
+                <a class="imagebox imagePreview" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage"></a>
+                <input ref="fileInput" type="file" @input="pickFile" class="photo-file" name="image_upload">
+              </div>
+              <!-- DRAG OR DROP ZONE -->
 
-      </div>
-        <a class="submit-settings cancel" @click.left="toggleUpload">cancel</a>
-        <button type="submit" class="submit-settings">share</button>
+ 
 
-    </form>
-  <!-- UPLOAD FORM -->
-  </div>
+
+              <!--<label class="profile" for="">
+                Select which notes to share.
+                <input type="file" id="notesFile" name="notes_upload" class="" /><br>
+              </label>-->
+
+
+              Add your course name and caption for your post.
+              <div class="settings-line">
+                <div class="settings-format">
+                <!-- <input name="filename" type="text" placeholder="file name" /> -->
+                <input name="coursename" type="text" placeholder="course name" class="course"/>
+              </div>
+
+              <div class="settings-format-info">
+                <textarea rows="3" name="caption" type="text" class="" placeholder="description"></textarea>
+              </div>
+            </div>
+
+            </div>
+            <a class="submit-settings cancel" @click.left="toggleUpload">cancel</a>
+            <button type="submit" class="submit-settings">share</button>
+
+          </form>
+          <!-- UPLOAD FORM -->
+    </div>
 <!-- UPLOAD CONTAINER -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-
-
-
-        <a class="material-icons footer-add-icon" @click.left="toggleUpload">add</a>
-
-        <!-- search -->
-          <!--
-          <input class="navbar" :class="{ 'navbar--hidden': !showNavbar }" placeholder="search"></input>
-          -->
-        <!-- search -->
-
-
-      </footer>
+</div>
+ <a class="material-icons footer-add-icon" @click.left="toggleUpload">add</a>
+ </footer>
   <!-- FOOTER -->
 
   

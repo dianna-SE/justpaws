@@ -26,10 +26,10 @@ class Post(models.Model):
     caption = models.TextField(max_length = 80)
     created_at = models.DateTimeField(default = datetime.now)
     no_of_downloaded = models.IntegerField(default = 0)
-
-    # NEW
+    # NEW #
     file_name = models.TextField(max_length = 20, blank = True)
     course_name = models.TextField(max_length = 20, blank = True)
+    notes = models.ImageField(upload_to = 'post_notefiles')
 
     def __str__(self):
         return self.user
@@ -58,3 +58,10 @@ class PostUser(models.Model):
 
     def __str__(self):
         return self.user
+
+class LikePost(models.Model):
+    post_id = models.CharField(max_length=500)
+    username = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.username

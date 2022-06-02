@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>illume | settings</title>
   </head>
@@ -24,9 +25,9 @@
   <body>
 <!-- INDEX CONTAINER -->
 
-    <div id="app" class="main" v-cloak>
+    <div id="app" class="main animate__animated animate__fadeInDown" v-cloak>
       <!-- LOGO HEADER -->
-      <div class="">
+      <div class="animate__animated animate__fadeInDown">
           <div class="settings-header-name">hello {{user_profile.firstname}}.</div>
           <div class="settings-create">let's update your profile. </div>
       </div>
@@ -35,14 +36,14 @@
 
 
       <!-- REGISTER FORM -->
-      <form class="settings-form settings-2-form" action="" method="POST" enctype="multipart/form-data">
+      <form class="settings-form settings-2-form animate__animated animate__fadeInDown" action="" method="POST" enctype="multipart/form-data">
 
           {% csrf_token %}
           <div class="settings-password-format"> 
           <!-- INPUT ITEMS -->
 
               <!-- profile -->
-              <label class="profile" for="">
+              <label class="profile animate__animated animate__fadeInDown" for="">
                   <img class="settings-profile-img" src="{{user_profile.profileimg.url}}" />
                     <input type="file" name="image" value=""/>
               </label>
@@ -51,7 +52,7 @@
 
 
             <!-- username -->
-            <div class="settings-line">
+            <div class="settings-line animate__animated animate__fadeInDown">
               <div class="settings-format">
                 <input name="firstname" type="text" class="" placeholder="first name" value="{{user_profile.firstname}}"/>
                 <input name="lastname" type="text" class="" placeholder="last name" value="{{user_profile.lastname}}"/>

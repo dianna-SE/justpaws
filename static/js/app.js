@@ -1,3 +1,4 @@
+
 const app = Vue.createApp({
     delimiters: ["[[", "]]"],
     data() {
@@ -8,6 +9,7 @@ const app = Vue.createApp({
             showSearch: false,
             showUpload: false,
             showSuggested: false,
+            previewImage: null,
         };
     },
     methods: {
@@ -25,6 +27,21 @@ const app = Vue.createApp({
         },
         toggleSuggested() {
             this.showSuggested = !this.showSuggested
+        },
+        selectImage() {
+            this.$refs.fileInput.click()
+        },
+        pickFile () {
+            let input = this.$refs.fileInput
+            let file = input.files
+            if (file && file[0]) {
+              let reader = new FileReader
+              reader.onload = e => {
+                this.previewImage = e.target.result
+              }
+              reader.readAsDataURL(file[0])
+              this.$emit('input', file[0])
+            }
         },
     },
 })

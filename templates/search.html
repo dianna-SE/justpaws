@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>illume | note library</title>
   </head>
@@ -22,7 +23,7 @@
 
   <body>
 <!-- INDEX CONTAINER -->
-    <div id="app" class="main" v-cloak>
+    <div id="app" class="main animate__animated animate__fadeIn" v-cloak>
 
   <!-- HEADER -->
       <header>
@@ -59,7 +60,7 @@
       <div class="search-result"> results for: </div>
     </br>
   {% for users in username_profile_list %}
-      <div class="search-results">
+      <div class="search-results animate__animated animate__fadeInLeft">
         <div class="search-img-box">
             <a href="/profile/{{users.user}}">
                 <img class="search-img" src="{{users.profileimg.url}}"></img>

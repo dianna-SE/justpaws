@@ -105,6 +105,10 @@ header {
     -ms-user-select: none;
     user-select: none;
 }
+
+.profile-box-bio {
+    margin-top: -0.5rem;
+}
 /* PROFILE BOX */
 
 

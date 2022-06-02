@@ -1,4 +1,5 @@
 
+
 /* 
 borders: px
 general: vw, vh, rem, em, %, ch
@@ -16,6 +17,10 @@ to refresh: "shift" + refresh button
     outline: solid #f00 1px !important;
 }
 */
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
 
 html, body {
     margin: 0;
@@ -248,10 +253,10 @@ header {
 }
 
 .post-like {
-    position: absolute;
     display: flex;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
     flex: 1;
-    margin-top: 20rem;
     align-items: center;
     justify-content: flex-start;
     width: 20rem;
@@ -273,6 +278,11 @@ header {
 }
 
 .post-like-count {
+    cursor:auto;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     margin-left: 0.4rem;
     margin-top: 0.3rem;
     font-size: 0.85rem;
@@ -286,6 +296,7 @@ header {
     margin-top: -1.2rem;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
+    box-shadow: 0 5px 5px -2px rgb(185, 185, 185);
 }
 
 .post-header {
@@ -304,6 +315,7 @@ header {
 .post-right {
     color: rgb(136, 136, 177); 
     transition: 0.4s;
+    cursor: auto;
 }
 
 .post-right > a {
@@ -313,7 +325,6 @@ header {
 }
 
 .post-right:hover {
-    cursor: pointer;
     color: rgb(167, 167, 167); 
     transition: 0.4s;
 }
@@ -327,7 +338,7 @@ header {
     font-size: 0.93rem;
     position: absolute;
     padding-right: 2rem;
-    margin-left: 2.6rem;
+    margin-left: 2.8rem;
     margin-top: -0.2rem;
 }
 
@@ -356,11 +367,15 @@ header {
 .post-caption{
     font-size: 0.93rem;
     text-align: left;
-    margin: 10 auto;
+    margin: 0 auto;
     margin-left: 3.5rem;
-    padding: 1.7rem 3rem 1rem 0rem;
+    padding: 0.5rem 3rem 1.7rem 0.5rem;
     width: 23rem;
     opacity: 0.8;
+}
+
+.caption {
+    margin-top: -1.5rem;
 }
 
 
@@ -476,7 +491,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     bottom: 65;
-    height: 50%;
+    height: 20rem; /* 7rem */
     width: 25rem;
     background-color: rgb(255, 255, 255);
     color: rgb(96, 96, 96);
@@ -493,6 +508,67 @@ a {
     position: fixed;
     padding-right: 5rem;
 }
+
+input#dropzoneFile {
+    cursor: pointer;
+}
+
+input#notesFile {
+    background-color: rgb(245, 245, 245);
+    color: rgb(68, 68, 68);
+    border: 1rem;
+    padding: 10px 20px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 25px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(193, 193, 193);
+    box-shadow: 0 8px 10px -6px rgb(196, 196, 196);
+    outline: none;
+    font-family: inherit;
+    width: 15rem;
+    margin-left: 0.5rem;
+}
+
+.imagePreview {
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
+}
+
+span#thumbnail {
+    display: flex;
+    justify-content: center;
+    padding-top: 3.5rem;
+}
+
+.photo-file {
+    border: none;
+    display: none;
+}
+
+.imagebox {
+    height: 12rem;
+    width: 22rem;
+    object-fit: fill;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 12em;
+    border-radius: 20px;
+    -moz-box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    box-shadow: 0 8px 10px -6px rgb(222, 222, 222);
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.2s;
+    background-color: rgb(245, 245, 245);
+}
+
+.imagebox:hover {
+    box-shadow: 0 2px 20px -2px rgb(93, 93, 93);
+
+}
+
 
 /* navbar search */
 .navbar {
@@ -565,6 +641,7 @@ a {
     box-shadow: 0 8px 50px -6px rgb(222, 222, 222);
     image-rendering: -webkit-optimize-contrast;
     transition: 0.2s;
+    color:rgb(110, 110, 159)
 
 }
 
@@ -622,12 +699,13 @@ a {
     border-radius: 1rem;
 }
 
-
+/* SEARCH */
 
 
 
 
 /* SUGGESTED */
+
 .suggested-panel {
     position: fixed;
     padding: 0.3rem 0.3rem 0.8rem 0.3rem;
@@ -678,6 +756,7 @@ a {
     color: rgb(136, 136, 177); 
     transition: 0.4s;
     background-color: white;
+    box-shadow: 0 4px 7px -2px rgb(185, 185, 185);
 }
 
 .material-icons.md-18 {
@@ -702,7 +781,6 @@ a {
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 500px;
-    border-radius: 500px;
     font-size: small;
     font-weight: bolder;
     background-image: linear-gradient(to right, #b3b3d8 0%, #b2adcc 51%, #bbbbe1 100%);
@@ -721,8 +799,36 @@ a {
     font-size: small;
 }
 
-/* SUGGESTED
+.suggest-bar {
+    position: fixed;
+    top: 45%;
+    left: -5;
+    height: 4.5rem;
+    font-family: inherit;
+    color: rgb(136, 136, 177);
+    background-color: rgb(250, 250, 250);
+    border: none;
+    cursor:pointer;
+    padding: 5px 15px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: bolder;
+    box-shadow: 0 4px 7px -2px rgb(185, 185, 185);
+}
+/* SUGGESTED */
+
+.course {
+    width: 21rem;
+}
 
 
+.material-icons.md-large {
+    font-size: 4rem;
+    padding: 0.3rem;
+}
 
-
+.material-icons.md-small {
+    font-size: 1.1rem;
+}

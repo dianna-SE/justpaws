@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>illume | {{user_profile.user.username}}'s profile</title>
   </head>
@@ -21,7 +22,7 @@
 
   <body>
 <!-- INDEX CONTAINER -->
-    <div id="app" class="main">
+    <div id="app" class="main animate__animated animate__fadeIn">
 
   <!-- HEADER -->
   <header>
@@ -75,22 +76,6 @@
 
 
 
-
-
-
-
-<!-- POST STATUS 
-  <div class="profile-following-list">
-    {% if user_post_length == 0 %}
-    <div>no posts | followers | 100 following</div>
-    {% elif user_post_length == 1 %}
-    <div>1 post | followers | 100 following</div>
-    {% else %}
-    <div>{{user_post_length}} posts | followers | 100 following</div>
-    {% endif %}
-  </div>
- POST STATUS -->
-
 <!-- FOLLOWING STATUS -->
 <div class="profile-following-box">
 
@@ -122,29 +107,13 @@
 <!-- FOLLOWING STATUS -->
 
 
-<!-- FOLLOWING STATUS 
-  <div class="profile-following-list">
-
-    {% if user_post_length == 0 %}
-    <div>no posts | followers | 100 following</div>
-    {% elif user_post_length == 1 %}
-    <div>1 post | followers | 100 following</div>
-    {% else %}
-    <div>{{user_post_length}} posts | followers | 100 following</div>
-    {% endif %}
-  </div>
-FOLLOWING STATUS -->
-
-
-
-
 
 
 
 <h2 class="gallery-notes">posts<h2>
 <!-- GALLERY FEED -->
 
-  <div class="profile-gallery">
+  <div class="profile-gallery animate__animated animate__fadeInUp">
       {% for post in user_posts reversed %}
       <a href="{{post.image.url}}">
         <img class="profile-gallery-img-square" src="{{post.image.url}}">
@@ -157,73 +126,6 @@ FOLLOWING STATUS -->
 
 
 
-
-
-
-
-<!-- GALLERY FEED 
-<div class="profile-gallery">
-  <h2>notes<h2>
-
-    {% for post in user_posts %}
-  <div class="profile-gallery-feed">
-    <a href="{{post.image.url}}">
-      <img class="profile-gallery-img-rectangle" src="{{post.image.url}}">
-    </a>
-    <a href="{{post.image.url}}">
-      <img class="profile-gallery-img-square" src="{{post.image.url}}">
-    </a>
-  </div>
-
-  <div class="profile-gallery-feed">
-    <a href="{{post.image.url}}">
-      <img class="profile-gallery-img-square square-2" src="{{post.image.url}}">
-    </a>
-    <a href="{{post.image.url}}">
-      <img class="profile-gallery-img-rectangle rectangle-2"  src="{{post.image.url}}">
-    </a>
-  </div>
-  {% endfor %}
-
-</div>
- GALLERY FEED -->
-
-
-<!-- GALLERY FEED 
-<div class="profile-gallery">
-  <h2>notes<h2>
-
-    {% for post in user_posts %}
-  <div class="profile-gallery-feed">
-    <div>
-      <img class="profile-gallery-img-rectangle" src="https://www.wikihow.com/images/thumb/1/18/Take-Better-Notes-Step-1-Version-2.jpg/v4-460px-Take-Better-Notes-Step-1-Version-2.jpg.webp">
-    </div>
-    <div>
-      <img class="profile-gallery-img-square" src="https://images.pexels.com/photos/3854816/pexels-photo-3854816.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    </div>
-  </div>
-
-  <div class="profile-gallery-feed">
-    <div>
-      <img class="profile-gallery-img-square square-2" src="https://m.media-amazon.com/images/I/81nia28xsOL._AC_SL1500_.jpg">
-    </div>
-    <div>
-      <img class="profile-gallery-img-rectangle rectangle-2"  src="https://i.ytimg.com/vi/9siqSpnGN6w/maxresdefault.jpg">
-    </div>
-  </div>
-
-  <div class="profile-gallery-feed">
-    <div>
-      <img class="profile-gallery-img-rectangle" src="https://www.sjsu.edu/students/pics/ADV_student-at-student-services-center_WEB.jpg">
-    </div>
-    <div>
-      <img class="profile-gallery-img-square" src="https://uploads-ssl.webflow.com/5ad143610f7efd77b6f188f3/5e3d6ede4a070144b6b8bfdb_IMG_1227.jpg">
-    </div>
-  </div>
-  {% endfor %}
-
-</div>
- GALLERY FEED -->
 
 
 

@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import Profile, Post, FollowersCount, PostUser
+from .models import Profile, Post, FollowersCount, PostUser, LikePost
 from django.contrib.auth.decorators import login_required
 from itertools import chain
 import random
@@ -71,14 +71,15 @@ def index(request):
 
 @login_required(login_url='login')
 def upload(request):
+
     if request.method == 'POST':
         user = request.user.username
         image = request.FILES.get('image_upload')
         caption = request.POST['caption']
-        file_name = request.POST['filename']
         course_name = request.POST['coursename']
+        notes = request.FILES.get('notes_upload')
 
-        new_post = Post.objects.create(user = user, image = image, caption = caption, file_name = file_name, coursename = course_name)
+        new_post = Post.objects.create(user = user, image = image, caption = caption, course_name = course_name, notes = notes)
         new_post.save()
 
         return redirect('/')
@@ -86,7 +87,27 @@ def upload(request):
         return redirect('/')
 
 
+@login_required(login_url='login')
+def like_post(request):
+    username = request.user.username
+    post_id = request.GET.get('post_id')
 
+    post = Post.objects.get(id=post_id)
+
+    # CHECK IF POST HAS ALREADY BEEN LIKED BY USER #
+    like_filter = LikePost.objects.filter(post_id = post_id, username = username).first()
+
+    if like_filter == None:
+        new_like = LikePost.objects.create(post_id = post_id, username = username)
+        new_like.save()
+        post.no_of_downloaded = post.no_of_downloaded + 1
+        post.save()
+        return redirect('/')
+    else: 
+        like_filter.delete()
+        post.no_of_downloaded = post.no_of_downloaded - 1
+        post.save()
+        return redirect('/') 
 
 
 @login_required(login_url='login')
