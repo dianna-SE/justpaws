@@ -491,7 +491,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     bottom: 65;
-    height: 20rem; /* 7rem */
+    height: 6rem; /* 7rem */
     width: 25rem;
     background-color: rgb(255, 255, 255);
     color: rgb(96, 96, 96);

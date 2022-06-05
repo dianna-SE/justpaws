@@ -125,8 +125,7 @@
 <!-- SUGGESTED CONTAINER -->
 <div v-if="showSuggested" class="suggested-panel animate__animated animate__bounceInLeft"> 
   <h3> more friends </h3>
-
-    {% for suggestion in suggestions_username_profile_list %}
+  {% for suggestion in suggestions_username_profile_list %}
     <div class="suggested-container">
       <a href="/profile/{{suggestion.user}}">
         <img class="suggested-img" src="{{suggestion.profileimg.url}}">
@@ -138,6 +137,7 @@
     </div>
     {% endfor %}
 </div>
+
 
   <!--<div>
     <button @click.left="toggleSuggested" class="material-icons suggest-bar">group_add</button>
