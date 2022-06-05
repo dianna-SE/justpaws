@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>illume | note library</title>  
+    <title>notes | home</title>  
   </head>
 
 
@@ -31,7 +31,7 @@
         <div class="header">
             <div class="header-left">
               <a href="/" class="material-icons header-icon ">pets</a>
-              <a href="/" class="header-name">illume</a>
+              <a href="/" class="header-name">notes</a>
             </div>
 
             <div class="header-right">
@@ -42,7 +42,6 @@
           </div>
       </header>
   <!-- HEADER -->
-
 
 
   <!-- profile header (circle) -->
@@ -61,9 +60,6 @@
       </div>
   </div>
   <!-- profile header -->
-
-
-
 
   
   <!-- POST FEED -->
@@ -87,9 +83,10 @@
 
 
             <div class="post-right">
-              <a class="material-icons">more_horiz</a>
+              <a href="{{post.image.url}}" class="material-icons" download>download</a>
             </div>
-          </div>
+        </div>
+
 
           <div class="post-like post-right">
             <a href="/like-post?post_id={{post.id}}" class="material-icons post-like-icon md-small">auto_stories</a>
@@ -172,9 +169,6 @@
             {% csrf_token %}
             <div class="settings-password-format"> 
 
-
-
-
               <!-- DRAG OR DROP ZONE -->
               <div class="">
                 <label for="dropzoneFile"></label>
@@ -184,8 +178,6 @@
                 <input ref="fileInput" type="file" @input="pickFile" class="photo-file" name="image_upload">
               </div>
               <!-- DRAG OR DROP ZONE -->
-
- 
 
 
               <!--<label class="profile" for="">
@@ -226,12 +218,6 @@
 <!-- INDEX CONTAINER -->
 
 
-
-
-
-
-
-
 <!-- FONT STYLING -->
     <!--
       font-family: 'Quicksand', sans-serif;
@@ -239,7 +225,6 @@
       font-family: 'Lora', serif;
     -->
 <!-- FONT STYLING -->
-
 
 
     <div class="clear"></div>

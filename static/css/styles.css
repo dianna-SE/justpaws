@@ -378,8 +378,19 @@ header {
     margin-top: -1.5rem;
 }
 
+.panel-box {
+    position: absolute;
+    margin: 0 auto;
+    left: 50%;
+    background-color: black;
+    color: red;
+    padding: 5rem;
+}
 
 /* post feed */
+
+
+
 
 .clear {
     clear: both;

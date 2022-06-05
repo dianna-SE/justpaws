@@ -9,6 +9,7 @@ const app = Vue.createApp({
             showSearch: false,
             showUpload: false,
             showSuggested: false,
+            showPanel: false,
             previewImage: null,
         };
     },
@@ -27,6 +28,9 @@ const app = Vue.createApp({
         },
         toggleSuggested() {
             this.showSuggested = !this.showSuggested
+        },
+        togglePanel() {
+            this.showPanel = !this.showPanel
         },
         selectImage() {
             this.$refs.fileInput.click()
