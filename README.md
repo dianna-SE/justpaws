@@ -37,7 +37,7 @@ This is a full-stack social media application that allows users to post images t
 To retrieve and inspect the source code,
 1. Clone the repo to your IDE
    ```sh
-   git clone git@github.com:dianna-SE/aurora.git
+   git clone git@github.com:dianna-SE/notes.git
    ```
 2. Must have dependencies and frameworks installed:
 - [ ]  Django
