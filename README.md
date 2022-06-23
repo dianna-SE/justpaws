@@ -84,11 +84,13 @@ To retrieve and inspect the source code,
 
 - [ ] Feature 1 - Login 
 - [ ] Feature 2 - Registration 
-- [ ] Feature 3 - Settings 
-- [ ] Feature 4 - Media Feed
-- [ ] Feature 5 - User/Follower Profile
+- [ ] Feature 3 - Media Feed
+- [ ] Feature 4 - Upload Image
+- [ ] Feature 5 - Suggested List
 - [ ] Feature 6 - Search Function
-- [ ] Feature 7 - Upload Function
+- [ ] Feature 7 - User Profile
+- [ ] Feature 8 - Settings 
+- [ ] Feature 9 - My Profile
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
