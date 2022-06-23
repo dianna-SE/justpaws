@@ -1,5 +1,4 @@
-# notes | media app
-
+# Notes | Social Media Application
 
 <!-- PROJECT LOGO -->
 <br />
@@ -7,38 +6,8 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is a full-stack social media application that allows users to post images to a social feed, like images, follow other users, and update user  profile.
 
@@ -80,17 +49,26 @@ To retrieve and inspect the source code,
 
 
 <!-- PAGES -->
-## Pages
+# Pages
 
-- [ ] Feature 1 - Login 
-- [ ] Feature 2 - Registration 
-- [ ] Feature 3 - Media Feed
-- [ ] Feature 4 - Upload Image
-- [ ] Feature 5 - Suggested List
-- [ ] Feature 6 - Search Function
-- [ ] Feature 7 - User Profile
-- [ ] Feature 8 - Settings 
-- [ ] Feature 9 - My Profile
+## Feature 1 - Login 
+![1-login](https://user-images.githubusercontent.com/97206862/175224678-3cf39b51-e083-4649-8b92-a6558e4dced4.png)
+## Feature 2 - Registration 
+![2-register](https://user-images.githubusercontent.com/97206862/175224693-358f4751-92fa-40cf-979f-0aa3101056c2.png)
+## Feature 3 - Media Feed
+![2-feed](https://user-images.githubusercontent.com/97206862/175224683-fd0d6e45-669e-4558-8a0c-efa9737bd65d.png)
+## Feature 4 - Upload Image
+![3-upload](https://user-images.githubusercontent.com/97206862/175224695-5fa4591a-8096-4234-989a-99295ea2f841.png)
+## Feature 5 - Suggested List
+![4-suggested](https://user-images.githubusercontent.com/97206862/175224698-ce7579fa-79b8-4cba-a530-23241647dccb.png)
+## Feature 6 - Search Function
+![5-search](https://user-images.githubusercontent.com/97206862/175224701-1b96e9e6-b5ca-4040-acf1-de65669bf71d.png)
+## Feature 7 - User Profile
+![6-userprofile](https://user-images.githubusercontent.com/97206862/175224703-c009e5b2-4a3f-4fd6-b6b8-cea3941a32a8.png)
+## Feature 8 - Settings 
+![7-settings](https://user-images.githubusercontent.com/97206862/175224707-24c429dd-fbd7-4f96-b4bb-2b1350457255.png)
+## Feature 9 - My Profile
+![8-myprofile](https://user-images.githubusercontent.com/97206862/175224708-7e956a82-eada-48ec-9fd7-19f0da124c1c.png)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
