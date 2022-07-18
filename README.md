@@ -52,7 +52,7 @@ To retrieve and inspect the source code,
 # Pages
 
 ## Feature 1 - Login 
-![1-login](https://user-images.githubusercontent.com/97206862/175224678-3cf39b51-e083-4649-8b92-a6558e4dced4.png)
+![1-login]
 <img width="925" alt="login" src="https://user-images.githubusercontent.com/97206862/179450132-25c28bf5-9dc0-408d-8bc6-fa07a0428023.png">
 
 ## Feature 2 - Registration 
