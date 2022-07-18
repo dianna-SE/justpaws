@@ -2,7 +2,6 @@
 
 <!-- PROJECT LOGO -->
 <br />
-
 This is a full-stack social media application that allows users to post puppy pictures to a social feed, like images, follow other users, and update user  profile.
 
 ## Project Responsibilities
