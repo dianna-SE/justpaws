@@ -55,8 +55,7 @@ To retrieve and inspect the source code,
 <img width="925" alt="login" src="https://user-images.githubusercontent.com/97206862/179450132-25c28bf5-9dc0-408d-8bc6-fa07a0428023.png">
 
 ## Feature 2 - Registration 
-<img width="925" alt="register" src="https://user-images.githubusercontent.com/97206862/179450223-cccdd06e-7a1a-4de4-acb9-49f6de4e51cd.png">
-
+<img width="897" alt="Screen Shot 2022-07-17 at 10 48 37 PM" src="https://user-images.githubusercontent.com/97206862/179451707-c54561d0-5446-41b2-a7f9-a522ff79b1aa.png">
 
 ## Feature 3 - Media Feed
 <img width="925" alt="feed" src="https://user-images.githubusercontent.com/97206862/179450230-073df408-3950-4e66-85cc-9c98f8ec662d.png">
