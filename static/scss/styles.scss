@@ -1,4 +1,20 @@
+.dropzone {
+    label {
+        padding: 8px 12px;
+        color: white;
+        background-color: rgb(163, 163, 240);
+        transition: 0.3s ease all;
+    }
+}
 
+
+
+/* 
+borders: px
+general: vw, vh, rem, em, %, ch
+
+to refresh: "shift" + refresh button
+*/
 [v-cloak] {
     display: none;
 }
@@ -16,7 +32,6 @@
 }
 
 html, body {
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -302,7 +317,7 @@ header {
 .post-left {
     display: flex;
     flex: 1;
-    margin-right: 22rem;
+    margin-right: 18rem;
     margin-top: 0.5rem;
 }
 
@@ -347,8 +362,8 @@ header {
     margin-left: 3rem;
     margin-right: 3rem;
     height: 16.5rem;
-    width: 27rem;
-    object-fit: cover;
+    width: 24rem;
+    object-fit: fill;
     -webkit-border-radius: 1em;
     -moz-border-radius: 12em;
     border-radius: 20px;
@@ -835,5 +850,5 @@ span#thumbnail {
 }
 
 .material-icons.md-small {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }

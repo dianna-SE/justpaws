@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # MAKE MIGRATIONS FOR MY APP #
     'vue_app.apps.VueAppConfig',
+    'django_sass',
 ]
 
 MIDDLEWARE = [

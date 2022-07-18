@@ -1,5 +1,5 @@
 
-.register-body {
+body {
     overflow: hidden;
 }
 
@@ -10,7 +10,6 @@
 .register-header-name {
     font-size: 2.5rem;
     font-weight: bolder;
-    margin-top: 7rem;
     margin-bottom: 1rem;
 }
 

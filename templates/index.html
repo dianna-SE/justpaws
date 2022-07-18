@@ -7,17 +7,20 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.scss' %}">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
-    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="{% static 'sass/styles.scss' %}" rel="stylesheet">-->
+
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>notes | home</title>  
+    <title>onlypaws | home</title>  
   </head>
 
 
@@ -31,7 +34,7 @@
         <div class="header">
             <div class="header-left">
               <a href="/" class="material-icons header-icon ">pets</a>
-              <a href="/" class="header-name">notes</a>
+              <a href="/" class="header-name">onlypaws</a>
             </div>
 
             <div class="header-right">
@@ -82,20 +85,20 @@
             </div>
 
 
-            <div class="post-right">
+            <!--<div class="post-right">
               <a href="{{post.image.url}}" class="material-icons" download>download</a>
-            </div>
+            </div>-->
         </div>
 
 
           <div class="post-like post-right">
-            <a href="/like-post?post_id={{post.id}}" class="material-icons post-like-icon md-small">auto_stories</a>
+            <a href="/like-post?post_id={{post.id}}" class="material-icons post-like-icon md-small">mood</a>
             {% if post.no_of_downloaded == 0 %}
-            <strong class="post-like-count" ><b>helpful for ...</b></strong>
+            <strong class="post-like-count" ><b>favorited by ...</b></strong>
             {% elif post.no_of_downloaded == 1 %}
-            <strong class="post-like-count" ><b>helpful for {{post.no_of_downloaded}} person</b></strong>
+            <strong class="post-like-count" ><b>favorited by {{post.no_of_downloaded}} pal</b></strong>
             {% else %}
-            <strong class="post-like-count" ><b>helpful for {{post.no_of_downloaded}} people</b></strong>
+            <strong class="post-like-count" ><b>favorited by{{post.no_of_downloaded}} pals</b></strong>
             {% endif %}
           </div>
 
@@ -186,15 +189,15 @@
               </label>-->
 
 
-              Add your course name and caption for your post.
+              Then, add a title and caption for your post.
               <div class="settings-line">
                 <div class="settings-format">
                 <!-- <input name="filename" type="text" placeholder="file name" /> -->
-                <input name="coursename" type="text" placeholder="course name" class="course"/>
+                <input name="coursename" type="text" placeholder="post title" class="course"/>
               </div>
 
               <div class="settings-format-info">
-                <textarea rows="3" name="caption" type="text" class="" placeholder="description"></textarea>
+                <textarea rows="3" name="caption" type="text" class="" placeholder="caption"></textarea>
               </div>
             </div>
 

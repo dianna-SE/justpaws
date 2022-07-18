@@ -1,92 +1,102 @@
-/* responsive web design 
+/* RESPONSIVE DESIGN */
 
-1. Start without a design (pure HTML)
-2. Create CSS without media queries (basic design that the SMALLEST screen -240px- displays)
-3. As soon as design looks bad at the next wide px display, BREAKPOINT!
-4. BREAKPOINT - create the first media query for this size VIA CSS
-5. Continue with this process with wider displays (breakpoint - media query)
-6. Test site with phones, tablets, etc.
-
-*/
-
-/*
- * Author: http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
- */
-
- 
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
-}
-
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 768px) {
-    .profile-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 200px) {
+    html,body{
+        overflow-x: hidden;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        align-content: center;
-        margin: 0 auto;
-        width: 1rem;
     }
 
+/* LOGIN */
+    .logo-header-name {
+        margin: 0 auto;
+        font-size: 3rem;
+    }
+
+    .logo-header > h4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: -3rem;
+    }
+
+    .signup {
+        margin-top: -0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .login-form > button {
+        padding: 8px 21px; 
+        font-size: 0.8rem;
+    }
+/* LOGIN */
+
+
+
+/* REGISTER */
+    .register-header-name
+    {
+        font-size: 2rem;
+        margin-bottom: -0.5rem;
+    }
+
+    .register-create {
+        font-size: 0.9rem;
+    }
+
+    .register-signup {
+        margin-top: -0.5rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    input{
+        padding: 10px 15px;  
+        background-color: rgb(245, 245, 245);
+        border: 1rem;
+        font-size: 0.7rem;
+    }
+
+    .register-form > button {
+        padding: 8px 21px;  
+        font-size: 0.8rem;
+        margin-left: -1.5rem;
+    }
+/* REGISTER */
+
+
+
+@media (max-width: 350px) {
+    html,body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
 }
 
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
+@media (max-width: 377px) {
+    html,body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
 }
 
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
+@media (max-width: 400px) {
+    html,body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
 }
 
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
+
+
+
 }
 
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-/* Styles */
-}
 
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}

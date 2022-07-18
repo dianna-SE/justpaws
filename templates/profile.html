@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>notes | {{user_profile.user.username}}'s profile</title>
+    <title>onlypaws | {{user_profile.user.username}}'s profile</title>
   </head>
 
 
@@ -82,22 +82,22 @@
 
 
   {% if user_post_length == 0 %}
-  <div> no notes</div>
+  <div> no posts</div>
   {% elif user_post_length == 1 %}
-  <div> 1 note</div>
+  <div> 1 post</div>
   {% else %}
-  <div> {{user_post_length}} notes</div>
+  <div> {{user_post_length}} posts</div>
   {% endif %}
 
 
 
 
   {% if user_followers == 0 %}
-  <div> no followers</div>
+  <div> no pals</div>
   {% elif user_followers == 1 %}
-  <div> 1 follower</div>
+  <div> 1 pal</div>
   {% else %}
-  <div> {{user_followers}} followers</div>
+  <div> {{user_followers}} pals</div>
   {% endif %}
 
 
@@ -110,7 +110,7 @@
 
 
 
-<h2 class="gallery-notes">notes<h2>
+<h2 class="gallery-notes">posts<h2>
 <!-- GALLERY FEED -->
 
   <div class="profile-gallery animate__animated animate__fadeInUp">

@@ -1,20 +1,30 @@
-
-.login-body {
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* LOGO HEADER */
 .logo-header {
-    margin-top: 5rem;
-}
-
-.logo-header-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-header-name {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bolder;
 }
+
+.material-icons.md-10 {
+    font-size: 3rem;
+    padding: 1rem;
+    padding-bottom: -0.5rem;
+} 
 /* LOGO HEADER */
 
 
