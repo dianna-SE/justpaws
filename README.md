@@ -52,25 +52,28 @@ To retrieve and inspect the source code,
 # Pages
 
 ## Feature 1 - Login 
-![1-login]
 <img width="925" alt="login" src="https://user-images.githubusercontent.com/97206862/179450132-25c28bf5-9dc0-408d-8bc6-fa07a0428023.png">
 
 ## Feature 2 - Registration 
-![2-register](https://user-images.githubusercontent.com/97206862/175224693-358f4751-92fa-40cf-979f-0aa3101056c2.png)
+<img width="925" alt="register" src="https://user-images.githubusercontent.com/97206862/179450223-cccdd06e-7a1a-4de4-acb9-49f6de4e51cd.png">
+
+
 ## Feature 3 - Media Feed
-![2-feed](https://user-images.githubusercontent.com/97206862/175224683-fd0d6e45-669e-4558-8a0c-efa9737bd65d.png)
+<img width="925" alt="feed" src="https://user-images.githubusercontent.com/97206862/179450230-073df408-3950-4e66-85cc-9c98f8ec662d.png">
+
 ## Feature 4 - Upload Image
-![3-upload](https://user-images.githubusercontent.com/97206862/175224695-5fa4591a-8096-4234-989a-99295ea2f841.png)
+<img width="897" alt="Screen Shot 2022-07-17 at 10 31 39 PM" src="https://user-images.githubusercontent.com/97206862/179450264-7766f776-cb32-4f55-a0a0-23d4f989ad0d.png">
+
 ## Feature 5 - Suggested List
-![4-suggested](https://user-images.githubusercontent.com/97206862/175224698-ce7579fa-79b8-4cba-a530-23241647dccb.png)
+
 ## Feature 6 - Search Function
-![5-search](https://user-images.githubusercontent.com/97206862/175224701-1b96e9e6-b5ca-4040-acf1-de65669bf71d.png)
+
 ## Feature 7 - User Profile
-![6-userprofile](https://user-images.githubusercontent.com/97206862/175224703-c009e5b2-4a3f-4fd6-b6b8-cea3941a32a8.png)
+
 ## Feature 8 - Settings 
-![7-settings](https://user-images.githubusercontent.com/97206862/175224707-24c429dd-fbd7-4f96-b4bb-2b1350457255.png)
+
 ## Feature 9 - My Profile
-![8-myprofile](https://user-images.githubusercontent.com/97206862/175224708-7e956a82-eada-48ec-9fd7-19f0da124c1c.png)
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
