@@ -1,4 +1,4 @@
-# Notes | Social Media Application
+# JustPaws | Social Media Application
 
 <!-- PROJECT LOGO -->
 <br />
@@ -9,7 +9,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a full-stack social media application that allows users to post images to a social feed, like images, follow other users, and update user  profile.
+This is a full-stack social media application that allows users to post puppy pictures to a social feed, like images, follow other users, and update user  profile.
 
 ## Project Responsibilities
 • Developed a full-stack web application that processed, analyzed, and rendered data visually
@@ -86,8 +86,8 @@ To retrieve and inspect the source code,
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [Dianna Pham](https://www.linkedin.com/in/diannapham-se/) - diannapham.se@gmail.com
+[Dianna Pham](https://www.linkedin.com/in/diannapham-se/) - diannapham.se@gmail.com
 
-Website - (https://www.diannapham.com/)
+(https://www.diannapham.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
