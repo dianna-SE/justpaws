@@ -53,6 +53,8 @@ To retrieve and inspect the source code,
 
 ## Feature 1 - Login 
 ![1-login](https://user-images.githubusercontent.com/97206862/175224678-3cf39b51-e083-4649-8b92-a6558e4dced4.png)
+<img width="925" alt="login" src="https://user-images.githubusercontent.com/97206862/179450132-25c28bf5-9dc0-408d-8bc6-fa07a0428023.png">
+
 ## Feature 2 - Registration 
 ![2-register](https://user-images.githubusercontent.com/97206862/175224693-358f4751-92fa-40cf-979f-0aa3101056c2.png)
 ## Feature 3 - Media Feed
