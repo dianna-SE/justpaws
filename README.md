@@ -65,14 +65,19 @@ To retrieve and inspect the source code,
 <img width="897" alt="Screen Shot 2022-07-17 at 10 31 39 PM" src="https://user-images.githubusercontent.com/97206862/179450264-7766f776-cb32-4f55-a0a0-23d4f989ad0d.png">
 
 ## Feature 5 - Suggested List
+<img width="925" alt="suggested" src="https://user-images.githubusercontent.com/97206862/179450309-39daf1e2-6644-45c5-a9ad-6adffffe4cf5.png">
 
 ## Feature 6 - Search Function
+<img width="925" alt="search" src="https://user-images.githubusercontent.com/97206862/179450331-3f27ba00-49f5-41e3-93ea-8b9a55e241c3.png">
 
 ## Feature 7 - User Profile
+<img width="925" alt="puppy profile" src="https://user-images.githubusercontent.com/97206862/179450372-5d9f64e6-968e-47b3-a450-5dacaaf64603.png">
 
 ## Feature 8 - Settings 
+<img width="925" alt="settings" src="https://user-images.githubusercontent.com/97206862/179450377-e7a9d40e-d4f8-45b5-a519-2dd8beba0115.png">
 
 ## Feature 9 - My Profile
+<img width="925" alt="myprofile" src="https://user-images.githubusercontent.com/97206862/179450386-69edd487-e077-4623-a810-7c8b876441be.png">
 
 
 
