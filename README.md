@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-This is a full-stack social media application that allows users to post puppy pictures to a social feed, like images, follow other users, and update user  profile.
+This is a full-stack social media application that allows users to post puppy pictures to a social feed, like images, follow other users (pals), and update user  profile.
 
 ## Project Responsibilities
 • Developed a full-stack web application that processed, analyzed, and rendered data visually
