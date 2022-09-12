@@ -5,11 +5,11 @@
 This is a full-stack social media application that allows users to post puppy pictures to a social feed, like images, follow other users (pals), and update user  profile.
 
 ## Project Responsibilities
-• Developed a full-stack web application that processed, analyzed, and rendered data visually
+• Created a full-stack web application that implemented Model View Control architecture using  
+Django. 
+• Experience in object-oriented programming to develop front-end and server-side using standard security practices and development design parameters.
+• Integrated REST API within the web application to allow user interactions through social media authentication, login, profile, and feed uploads.
 
-• Implemented code following standard security practices and development design parameters
-
-• Integrated REST API for social media authentication, logins, and other services
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
