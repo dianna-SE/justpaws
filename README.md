@@ -7,7 +7,9 @@ This is a full-stack social media application that allows users to post puppy pi
 ## Project Responsibilities
 • Created a full-stack web application that implemented Model View Control architecture using  
 Django. 
+
 • Experience in object-oriented programming to develop front-end and server-side using standard security practices and development design parameters.
+
 • Integrated REST API within the web application to allow user interactions through social media authentication, login, profile, and feed uploads.
 
 
